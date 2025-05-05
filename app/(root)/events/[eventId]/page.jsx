@@ -1,11 +1,15 @@
-"use client"
-
-import React, { useState } from 'react';
+import { eventList } from '@/constants';
+import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { eventList } from '@/constants';
 import Footer from '@/components/Footer';
-import { notFound } from 'next/navigation';
+import EventAccordion from '@/components/EventAccordion';
+
+export async function generateStaticParams() {
+  // Get the list of event IDs from your constants
+  const eventIds = eventList.map(event => ({ eventId: event.id }));
+  return eventIds;
+}
 
 export default function EventDetailPage({ params }) {
   const { eventId } = params;
@@ -18,9 +22,7 @@ export default function EventDetailPage({ params }) {
     notFound();
   }
 
-  const [activeAccordionItem, setActiveAccordionItem] = useState(0);
-
-  // Create regions array from event data for either format (2024 or 2025)
+  // Get regions from event data
   const getRegionsFromEvent = (event) => {
     if (event.scope && event.scope.schools) {
       // For 2025 format with scope.schools object
@@ -61,7 +63,7 @@ export default function EventDetailPage({ params }) {
       ].filter(region => region.schools && region.schools.length > 0);
     }
 
-    // Default to the existing regions array for the 2024 format
+    // Default static regions array for the 2024 format
     return [
       {
         title: 'ABUJA, FCT SCHOOLS',
@@ -180,11 +182,7 @@ export default function EventDetailPage({ params }) {
   };
 
   const regions = getRegionsFromEvent(event);
-
-  // Fees data
   const fees = event.fees || [];
-
-  // Event benefits
   const benefits = event.benefits || [
     'Meet & Discuss with High-Quality Students & Parents from Top Secondary Schools in Nigeria',
     'Generate Quality Leads of Students for A Level, International Foundation Year, & Undergraduate Programmes',
@@ -193,31 +191,6 @@ export default function EventDetailPage({ params }) {
     'Meet & interact with Students from 64 Top Secondary Schools in Nigeria.',
     'Become a <strong>British AUC Priority Partner</strong> by joining the Study Tour'
   ];
-
-  const AccordionItem = ({ title, schools, index }) => (
-    <article
-      className={`accordion-item ${activeAccordionItem === index ? 'active' : ''} rounded-[30px] h-full transition-all duration-300 ease-in-out ${
-        activeAccordionItem === index ? 'bg-[#1a1a1a] text-white' : 'bg-gray-300 hover:bg-gray-400 text-black'
-      } w-full`}
-      style={{
-        boxShadow: activeAccordionItem === index ? '0 0 15px rgba(255, 0, 0, 0.2)' : 'none',
-        border: activeAccordionItem === index ? '1px solid #ff000030' : 'none'
-      }}
-    >
-      {activeAccordionItem === index && (
-        <div className="p-8 h-full flex flex-col justify-between items-start">
-          <div className="mb-6">
-            {schools.map((school, i) => (
-              <p key={i} className="mb-3 flex items-start text-[15px]">
-                <span className="mr-2 text-white">◉</span> {school}
-              </p>
-            ))}
-          </div>
-          <h1 className="text-xl font-bold">{title}</h1>
-        </div>
-      )}
-    </article>
-  );
 
   return (
     <>
@@ -278,34 +251,20 @@ export default function EventDetailPage({ params }) {
                 <div className="flex-1 text-[13px] text-justify">
                   <div dangerouslySetInnerHTML={{ __html: event.detailedDescription.replace(/\n/g, '<br/>') }}></div>
                 </div>
-                <div className="flex-1 bg-gray-200 h-64"></div>
+                <div className="flex-1 bg-gray-200">
+                    <Image src="/tour2025.png" alt="Event Image" width={500} height={500} />
+                </div>
               </div>
             </div>
 
-            {/* Schools Section */}
+            {/* Schools Section - Using client component for interactivity */}
             <div className="py-8 mb-16">
               <h1 className="text-xl font-bold text-center mb-6">SCOPE</h1>
               <p className="text-center text-[13px] mb-8">
                 <strong>{event.title}</strong> will cover {event.id === "study-tour-2025" ? "48" : "64"} Private High Schools across the visited states. The schools to be covered during this tour are as follows:
               </p>
-              <div className="mx-auto flex gap-4 h-[600px]">
-                {regions.map((region, index) => (
-                  <div
-                    key={index}
-                    className={`overflow-hidden rounded-[30px] transition-all duration-500 ease-in-out cursor-pointer ${
-                      activeAccordionItem === index
-                        ? 'w-[70%] shadow-lg shadow-red-400'
-                        : 'w-[6%] hover:w-[8%]'
-                    }`}
-                    onClick={() => setActiveAccordionItem(index)}
-                  >
-                    <AccordionItem
-                      title={region.title}
-                      schools={region.schools}
-                      index={index}
-                    />
-                  </div>
-                ))}
+              <div id="accordion-container" className="mx-auto">
+                <EventAccordion regions={regions} />
               </div>
             </div>
 
@@ -591,21 +550,6 @@ export default function EventDetailPage({ params }) {
         )}
       </div>
       <Footer />
-
-      <style jsx>{`
-        .accordion-item {
-          border-bottom: 1px solid #e5e7eb;
-          cursor: pointer;
-        }
-        .accordion-item.active {
-          background-color: #f9fafb;
-        }
-        .accordion-item h1 {
-          margin-top: 1rem;
-          font-weight: bold;
-          font-size: 1.25rem;
-        }
-      `}</style>
     </>
   );
 }

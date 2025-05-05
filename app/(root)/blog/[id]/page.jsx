@@ -1,11 +1,20 @@
-"use client"
 // blog/[id]/page.js
-import { useParams } from 'next/navigation';
 import { blogs } from '@/constants';
 import Image from 'next/image';
 
-const BlogPost = () => {
-    const { id } = useParams();
+export async function generateStaticParams() {
+  // Return an array of objects with the id param for each blog post
+  // For example, if you have 4 blog posts as shown in your constants
+  return [
+    { id: '1' },
+    { id: '2' },
+    { id: '3' },
+    { id: '4' }
+  ];
+}
+
+export default function BlogPost({ params }) {
+  const { id } = params;
 
   // Find the specific blog post by its key
   const blogPost = blogs.find((blog) => blog.key === parseInt(id));
@@ -23,6 +32,4 @@ const BlogPost = () => {
       <p>{blogPost.content}</p> {/* Add blog content here if you have it */}
     </div>
   );
-};
-
-export default BlogPost;
+}

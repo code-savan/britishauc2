@@ -187,7 +187,7 @@ export const studyTour2025 = {
     title: "British AUC Study Tour | 2025",
     date: "15th September, 2025 - 2nd October, 2025",
     location: "5 Major States in Nigeria | 48 High Profile International Secondary Schools",
-    image: "/event1.webp",
+    image: "/tour2025.png",
     link: "/events/study-tour-2025",
     showLink: true,
     shortDescription: "Explore, Learn, Experience; Join Our Study Tour!",
