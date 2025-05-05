@@ -334,3 +334,18 @@ body {
         padding: 2rem;
     }
 }
+
+/* Hide scrollbar for testimonials and other similar components */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Internet Explorer and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
+
+/* Adding touch action support */
+.touch-pan-x {
+  touch-action: pan-x;
+}

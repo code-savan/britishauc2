@@ -11,42 +11,32 @@ const page = () => {
 
             </div> */}
 
-            <p className='text-[36px] font-semibold capitalize text-white'>All blogs</p>
+            <p className='text-[24px] sm:text-[30px] md:text-[36px] font-semibold capitalize text-white'>All blogs</p>
         </div>
 
-        <div className='px-[80px] py-[50px] flex flex-wrap gap-16 justify-center hover:cursor-pointer'>
+        <div className='px-4 sm:px-6 md:px-[40px] lg:px-[80px] py-6 sm:py-8 md:py-[50px] flex flex-wrap gap-4 sm:gap-8 md:gap-12 lg:gap-16 justify-center hover:cursor-pointer'>
                 {
                     blogs.map((item) => (
-<Link key={item.key} href={`/blog/${item.key}`}>
-        <div className="w-[350px]">
-        <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
-  <img
-    alt=""
-    src={item.image}
-    class="h-56 w-full object-cover"
-  />
+                      <Link key={item.key} href={`/blog/${item.key}`}>
+                        <div className="w-full sm:w-[300px] md:w-[320px] lg:w-[350px]">
+                          <article className="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
+                            <img
+                              alt={item.title}
+                              src={item.image}
+                              className="h-48 sm:h-52 md:h-56 w-full object-cover"
+                            />
 
-  <div class="bg-white p-4 sm:p-6">
-    <div className="flex items-center justify-between">
-    <time datetime="2022-10-10" class="block text-xs text-gray-500 font-semibold"> {item.date} </time>
+                            <div className="bg-white p-3 sm:p-4 md:p-6">
+                              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                                <time datetime={item.date} className="block text-xs text-gray-500 font-semibold mb-1 sm:mb-0"> {item.date} </time>
+                                <p className='text-[12px] sm:text-[13px] md:text-[14px] font-semibold text-gray-500'>{item.author}</p>
+                              </div>
 
-    <p className='text-[14px] font-semibold text-gray-500'>{item.author}</p>
-    </div>
-
-    <a href="#">
-      <h3 class="mt-0.5 text-lg text-gray-900 font-semibold">{item.title}</h3>
-    </a>
-
-    {/* <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dolores, possimus
-      pariatur animi temporibus nesciunt praesentium dolore sed nulla ipsum eveniet corporis quidem,
-      mollitia itaque minus soluta, voluptates neque explicabo tempora nisi culpa eius atque
-      dignissimos. Molestias explicabo corporis voluptatem?
-    </p> */}
-  </div>
-</article>
-        </div>
-</Link>
+                              <h3 className="mt-2 text-base sm:text-lg text-gray-900 font-semibold">{item.title}</h3>
+                            </div>
+                          </article>
+                        </div>
+                      </Link>
                     ))
                 }
         </div>
