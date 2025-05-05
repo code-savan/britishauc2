@@ -1,4 +1,4 @@
-import { Key } from "lucide-react"
+import { studyTour2024, studyTour2025 } from './eventData';
 
 export const navContacts = [
     {
@@ -37,12 +37,12 @@ export const success = [
     {
         key: 1,
         count: "1000+",
-        info: "Since we opened in 2009 we’ve seen the lives changed of over 1000 students."
+        info: "Since we opened in 2009 we've seen the lives changed of over 1000 students."
     },
     {
         key: 2,
         count: "100%",
-        info: "If our students don’t succeed, then we haven’t done our job. Our students have a 100% University acceptance rate!"
+        info: "If our students don't succeed, then we haven't done our job. Our students have a 100% University acceptance rate!"
     },
     {
         key: 3,
@@ -239,25 +239,26 @@ export const partners = [
 ]
 
 export const eventList = [
+    studyTour2024,
+    studyTour2025,
     {
-        key: 1,
-        image: "/event1.webp",
-        link: "/",
-        showLink: true
-    },
-    {
+        id: "upcoming-event",
         key: 2,
+        title: "Upcoming Event",
+        date: "Coming Soon",
+        location: "To be announced",
         image: "/noevent.webp",
-        link: "/",
-        showLink: false
+        link: "/events/upcoming-event",
+        showLink: false,
+        shortDescription: "Stay tuned for our upcoming events. We're planning something special!",
+        detailedDescription: "British AUC is constantly working to bring valuable educational opportunities to Nigerian students. We are currently planning our next major event and will announce details soon. Join our mailing list to be the first to know about upcoming events, registration details, and special offers.",
+        schedule: [],
+        participatingUniversities: [],
+        contactPerson: "Events Team",
+        contactEmail: "events@britishauc.com",
+        contactPhone: "+234 (0) 903 394 2463"
     },
-    {
-        key: 3,
-        image: "/noevent.webp",
-        link: "/",
-        showLink: false
-    },
-
+  
 ]
 
 
@@ -766,11 +767,11 @@ export const RDCAC = [
     },
     {
         Key: 6,
-        content: "Sponsor’s ID card."
+        content: "Sponsor's ID card."
     },
     {
         Key: 7,
-        content: "Student’s Birth Certificate."
+        content: "Student's Birth Certificate."
     },
     {
         Key: 8,
@@ -810,7 +811,7 @@ export const ALSONEED = [
     },
     {
         Key: 4,
-        content: "Sign the sponsor’s letter."
+        content: "Sign the sponsor's letter."
     },
     {
         Key: 5,
