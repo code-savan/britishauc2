@@ -20,12 +20,12 @@ export default function EventAccordion({ regions }) {
         <div className="p-8 h-full flex flex-col justify-between items-start">
           <div className="mb-6">
             {schools.map((school, i) => (
-              <p key={i} className="mb-3 flex items-start text-[15px]">
-                <span className="mr-2 text-white">◉</span> {school}
+              <p key={i} className="mb-3 flex items-start text-[15px] text-black">
+                <span className="mr-2 text-black">◉</span> {school}
               </p>
             ))}
           </div>
-          <h1 className="text-xl font-bold">{title}</h1>
+          <h1 className="text-xl font-bold text-black">{title}</h1>
         </div>
       )}
     </article>
