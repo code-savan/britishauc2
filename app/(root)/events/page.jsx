@@ -28,17 +28,18 @@ const page = () => {
                     {
                         eventList.map((item) => (
                         <div className='card hover:shadow-lg transition-all duration-300' key={item.key}>
-                            <div className="h-[200px] sm:h-[220px] md:h-[250px] relative overflow-hidden">
+                            <div className="relative overflow-hidden h-auto">
                                 <Image
                                     src={item.image}
                                     className='object-cover'
-                                    fill
-                                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+                                    width={400}
+                                    height={400}
+                                    // sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                                     alt={item.title}
                                     priority
                                 />
                             </div>
-                            <div className='w-full mt-4 flex justify-center mb-4 px-2'>
+                            <div className='w-full mt-4 flex justify-center mb-4 px-2 h-[10%]'>
                             {item.showLink && (
                                 <Link href={`/events/${item.id}`} className='rounded-[10px] py-[8px] px-6 sm:px-8 font-bold bg-black text-white text-xs sm:text-[12px] hover:bg-gray-800 transition-colors no-underline inline-block'>
                                 More Information

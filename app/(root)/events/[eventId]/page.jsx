@@ -200,8 +200,10 @@ export default function EventDetailPage({ params }) {
           <section className="tour_container">
             {/* Tour Header */}
             <div className="relative bg-cover bg-center h-[250px] sm:h-[400px] md:h-[550px] mb-4 sm:mb-8 md:mb-16 bg-slate-800 rounded-xl flex flex-col justify-center items-start text-white"
-                 style={{ backgroundImage: "url('/assets/images/study-tour-bg.jpg')" }}>
-              <div className="px-3 sm:px-8 md:px-20">
+                 style={{ backgroundImage: `url('/${event.id.includes('2025') ? '2025bg.jpg' : '2024bg.webp'}')` }}>
+              {/* Dark overlay/inset for better text readability */}
+              <div className="absolute inset-0 bg-black bg-opacity-70 rounded-xl"></div>
+              <div className="px-3 sm:px-8 md:px-20 relative z-10">
                 <h1 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-4 text-blue-400">{event.title}</h1>
                 <h6 className="text-xs sm:text-sm mb-1 sm:mb-2">{event.shortDescription}</h6>
                 <h6 className="text-xs sm:text-sm mb-2 sm:mb-6">

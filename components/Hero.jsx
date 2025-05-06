@@ -46,7 +46,7 @@ const Hero = () => {
                         </button>
                     </Link>
                     <Link href="/contact">
-                        <button className="flex items-center justify-center bg-white px-6 py-3 rounded-[10px] font-bold text-black text-xs sm:text-sm w-full sm:w-[150px] md:w-[130px]">
+                        <button className="flex items-center justify-center bg-white px-6 py-3 rounded-[10px] font-bold text-black text-xs sm:text-sm w-full sm:w-[150px]">
                             Register Now
                         </button>
                     </Link>
