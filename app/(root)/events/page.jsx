@@ -13,7 +13,7 @@ const page = () => {
             </div>
 
             <p className='font-normal text-sm sm:text-[12.8px] mx-auto mt-6 sm:mt-[50px] w-full sm:w-[85%] md:w-[75%] text-center'>
-                At our Nigeria events, you can meet university representatives and discuss your study prospects, campus life, and more in person. You can also have your application assessed and submitted, if sufficient of course! Currently, we have one upcoming event in Nigeria. This event is the British AUC Study Tour 2024. The event is happening from <span className='font-semibold'>15th September 2024</span> to <span className='font-semibold'>10th October 2024.</span> Register today with British AUC!
+                At our Nigeria events, you can meet university representatives and discuss your study prospects, campus life, and more in person. You can also have your application assessed and submitted, if sufficient of course! Currently, we have one upcoming event in Nigeria. This event is the British AUC Study Tour 2025. The event is happening from <span className='font-semibold'>15th September 2025</span> to <span className='font-semibold'>2nd October 2025.</span> Register today with British AUC!
             </p>
 
             <div className="subheading">
