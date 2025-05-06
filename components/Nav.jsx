@@ -68,7 +68,7 @@ const Nav = () => {
     return (
         <header className='px-[20px] md:px-[60px]'>
             {/* Contact */}
-            <div className='w-full flex items-center justify-end pt-4'>
+            <div className='w-full flex items-center justify-end pt-4 mb-2'>
                 <div className='hidden sm:flex space-x-3'>
                     {navContacts.map(item => (
                         <div className="flex space-x-1 items-center" key={item.key}>
@@ -81,7 +81,7 @@ const Nav = () => {
 
             <nav className="py-1 flex justify-between items-center relative">
                 <Link href="/">
-                    <Image src="/logo.png" alt="logo" className='w-[120px] h-[70px] md:w-[161px] md:h-[90px]' width={180} height={180} />
+                    <Image src="/logo.png" alt="logo" className='w-[80px] md:w-[110px] ' width={120} height={120} />
                 </Link>
 
                 {/* Mobile menu button */}

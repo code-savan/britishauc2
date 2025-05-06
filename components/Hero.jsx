@@ -27,7 +27,7 @@ const Hero = () => {
   }, [])
 
   return (
-    <div className='w-full h-auto py-[20px]'>1
+    <div className='w-full h-auto py-[20px]'>
         {/* Hero section with responsive adjustments */}
         <div className="relative min-h-[350px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[550px] flex items-center bg-black bg-opacity-70 bg-blend-overlay bg-[url('/hero_banner.webp')] bg-center bg-no-repeat bg-cover px-5 sm:px-8 md:px-[60px] py-12 md:py-16">
             <div className="w-full md:w-[60%] lg:w-[52%] flex flex-col gap-4 sm:gap-5 md:gap-6">
