@@ -69,14 +69,14 @@ export default function Home() {
   }
 
   return (
-    <main className="relative min-h-screen md:h-screen w-full overflow-x-hidden">
+    <main className="relative h-fit md:h-screen w-full overflow-x-hidden">
       {/* Video Background */}
       <video
         autoPlay
         muted
         loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+        className=" inset-0 w-full h-full object-cover fixed top-0 md:absolute"
       >
         <source src="/herobg.mp4" type="video/mp4" />
       </video>
@@ -136,7 +136,7 @@ export default function Home() {
             variants={container}
             initial="hidden"
             animate="show"
-            className="bg-white/30 p-6 rounded-3xl shadow-xl"
+            className="bg-white/30 p-3 md:p-6 rounded-3xl shadow-xl"
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {categories.map((category, index) => (
