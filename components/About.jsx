@@ -23,42 +23,47 @@ const About = ({about}) => {
                     height={500}
                     priority
                 />
-</div>
+            </div>
 
             {/* Text section - full width on mobile, half on desktop */}
             <div className="w-full lg:w-1/2 py-4 sm:py-6 md:py-8 lg:py-10 space-y-4 sm:space-y-5">
-        {
-    about ?
+                {
+                    about ?
                     <p className='text-sm sm:text-base'>
-        <span className='font-semibold'>BRITISH AUC</span> is a leading organization that offers comprehensive support for students aspiring to study abroad. Our expert team assists students throughout the entire process, providing free visa and admission application services to universities worldwide. With a proven track record, we have successfully guided thousands of students to renowned universities and colleges across the globe.
-    </p>
-    :
+                        <span className='font-semibold'>BRITISH AUC</span> is a leading organization that offers comprehensive support for students aspiring to study abroad. Our expert team assists students throughout the entire process, providing free visa and admission application services to universities worldwide. With a proven track record, we have successfully guided thousands of students to renowned universities and colleges across the globe.
+                    </p>
+                    :
                     <p className='text-sm sm:text-base'>
                         <span className='font-semibold'>BRITISH AUC</span> is a Free Visa and Admission Application Centre that support admission and visa application to universities and countries around the world for WHOLLY FREE OF CHARGE.
-    </p>
-}
+                    </p>
+                }
 
-{
-    about ?
+                {
+                    about ?
                     <p className='text-sm sm:text-base'>
-        We offer a one-stop shop, providing up-to-date information on universities, scholarships, accommodations, and pre-departure support. Our personalized guidance ensures a seamless and stress-free experience. At <span className='font-semibold text-slate-800'>BRITISH AUC</span>, we are committed to helping students make informed decisions, unlock their potential, and embark on a transformative journey towards a brighter future.
-    </p>
-    :
+                        We offer a one-stop shop, providing up-to-date information on universities, scholarships, accommodations, and pre-departure support. Our personalized guidance ensures a seamless and stress-free experience. At <span className='font-semibold text-slate-800'>BRITISH AUC</span>, we are committed to helping students make informed decisions, unlock their potential, and embark on a transformative journey towards a brighter future.
+                    </p>
+                    :
                     <p className='text-sm sm:text-base'>
                         <span className='font-semibold'>BRITISH AUC&apos;s</span> Free Application Centre is a one-stop shop for all your study abroad support services. Our application centres have helped thousands of international students study in universities and colleges in the UK, USA, Canada, Australia, Ireland, Germany, Turkey, Cyprus, etc.
-    </p>
-}
+                    </p>
+                }
 
-                <div className="pt-2 sm:pt-4">
-                    <Link href="/contact">
+                <div className="pt-2 sm:pt-4 flex gap-4">
+                    <Link href="/international-education/contact">
                         <button className='flex items-center justify-center bg-[#007fff] px-6 py-3 rounded-[10px] font-bold text-white text-sm sm:text-[14px] w-full sm:w-auto sm:min-w-[180px]'>
                             Speak to an Advisor
                         </button>
                     </Link>
+                    <Link href="/international-education/about">
+                        <button className='flex items-center justify-center bg-white border border-[#007fff] px-6 py-3 rounded-[10px] font-bold text-[#007fff] text-sm sm:text-[14px] w-full sm:w-auto sm:min-w-[180px]'>
+                            Learn More
+                        </button>
+                    </Link>
                 </div>
-</div>
+            </div>
         </div>
-        </div>
+    </div>
   )
 }
 

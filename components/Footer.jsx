@@ -36,11 +36,11 @@ const Footer = () => {
                       <input type="checkbox" id="terms" className="rounded-full text-purple-600 mt-1" required />
                       <label htmlFor="terms" className="text-[10px] sm:text-xs">
                         I agree with the{' '}
-                        <Link href="#" className="text-blue-400 underline">
+                        <Link href="/international-education/terms" className="text-blue-400 underline">
                           Term of Uses
                         </Link>{' '} <br />
                         and{' '}
-                        <Link href="#" className="text-blue-400 underline">
+                        <Link href="/international-education/privacy" className="text-blue-400 underline">
                           Privacy Policy.
                         </Link>
                       </label>
@@ -63,12 +63,12 @@ const Footer = () => {
               <div className='w-full sm:w-1/2 md:w-1/3'>
                 <h3 className="font-bold text-base sm:text-lg mb-3 sm:mb-4">Company</h3>
                 <ul className="space-y-2 sm:space-y-4">
-                  <li><Link href="/about" className="hover:text-blue-600 text-sm sm:text-base">Who We Are</Link></li>
-                  <li><Link href="/services" className="hover:text-blue-600 text-sm sm:text-base">Our Promise</Link></li>
-                  <li><Link href="/blog" className="hover:text-blue-600 text-sm sm:text-base">Blog</Link></li>
-                  <li><Link href="/events" className="hover:text-blue-600 text-sm sm:text-base">Events</Link></li>
-                  <li><Link href="#" className="hover:text-blue-600 text-sm sm:text-base">Careers</Link></li>
-                  <li><Link href="/contact" className="hover:text-blue-600 text-sm sm:text-base">Contact Us</Link></li>
+                  <li><Link href="/international-education/about" className="hover:text-blue-600 text-sm sm:text-base">Who We Are</Link></li>
+                  <li><Link href="/international-education/services" className="hover:text-blue-600 text-sm sm:text-base">Our Promise</Link></li>
+                  <li><Link href="/international-education/blog" className="hover:text-blue-600 text-sm sm:text-base">Blog</Link></li>
+                  <li><Link href="/international-education/events" className="hover:text-blue-600 text-sm sm:text-base">Events</Link></li>
+                  <li><Link href="/international-education/careers" className="hover:text-blue-600 text-sm sm:text-base">Careers</Link></li>
+                  <li><Link href="/international-education/contact" className="hover:text-blue-600 text-sm sm:text-base">Contact Us</Link></li>
                 </ul>
               </div>
 
@@ -76,10 +76,10 @@ const Footer = () => {
               <div className='w-full sm:w-1/2 md:w-1/3'>
                 <h3 className="font-bold text-base sm:text-lg mb-3 sm:mb-4">Legal</h3>
                 <ul className="space-y-2 sm:space-y-4">
-                  <li><Link href="#" className="hover:text-blue-600 text-sm sm:text-base">Disclaimer</Link></li>
-                  <li><Link href="#" className="hover:text-blue-600 text-sm sm:text-base">Privacy Policy</Link></li>
-                  <li><Link href="#" className="hover:text-blue-600 text-sm sm:text-base">Terms of Use</Link></li>
-                  <li><Link href="#" className="hover:text-blue-600 text-sm sm:text-base">FAQs</Link></li>
+                  <li><Link href="/international-education/disclaimer" className="hover:text-blue-600 text-sm sm:text-base">Disclaimer</Link></li>
+                  <li><Link href="/international-education/privacy" className="hover:text-blue-600 text-sm sm:text-base">Privacy Policy</Link></li>
+                  <li><Link href="/international-education/terms" className="hover:text-blue-600 text-sm sm:text-base">Terms of Use</Link></li>
+                  <li><Link href="/international-education/faqs" className="hover:text-blue-600 text-sm sm:text-base">FAQs</Link></li>
                 </ul>
               </div>
 

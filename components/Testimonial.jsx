@@ -90,7 +90,7 @@ const Testimonial = () => {
         {/* Slider container */}
         <div
           ref={sliderRef}
-          className="flex gap-4 sm:gap-6 md:gap-10 overflow-x-auto scrollbar-hide snap-x snap-mandatory touch-pan-x"
+          className="flex md:justify-between md:px-10 gap-4 sm:gap-6 md:gap-10 overflow-x-auto scrollbar-hide snap-x snap-mandatory touch-pan-x"
           style={{
             scrollbarWidth: 'none',
             msOverflowStyle: 'none',
@@ -99,7 +99,7 @@ const Testimonial = () => {
         >
           {testimonials.map((item) => (
             <div
-              className='min-w-[280px] sm:min-w-[300px] w-[85vw] sm:w-[350px] md:w-full flex-shrink-0 h-[350px] sm:h-[400px] relative bg-none snap-start'
+              className='min-w-[280px] sm:min-w-[300px] w-[85vw] sm:w-[350px]  flex-shrink-0 h-[350px] sm:h-[400px] relative bg-none snap-start'
               key={item.key}
             >
               <Image

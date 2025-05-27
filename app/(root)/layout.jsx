@@ -1,21 +1,11 @@
-import Nav from '@/components/Nav'
-
-
-
-
-export default function HomeLayout({
+export default function RootLayout({
   children,
 }) {
   return (
-    <div className=' bg-[#faf9fb] w-full h-[100dvh] overflow-scroll'>
-
-      <header>
-          <Nav />
-      </header>
-      <main
-      >
+    <div className='bg-[#faf9fb] w-full min-h-[100dvh] overflow-auto'>
+      <main>
         {children}
       </main>
-      </div>
+    </div>
   );
 }

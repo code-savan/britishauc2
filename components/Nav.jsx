@@ -63,7 +63,7 @@ const Nav = () => {
     }, [pathname])
 
     const isLinkActive = (href) => pathname === href
-    const isStudyActive = pathname.startsWith('/study')
+    const isStudyActive = pathname.startsWith('/international-education/study')
 
     return (
         <header className='px-[20px] md:px-[60px]'>
@@ -80,7 +80,7 @@ const Nav = () => {
             </div>
 
             <nav className="py-1 flex justify-between items-center relative">
-                <Link href="/">
+                <Link href="/international-education">
                     <Image src="/logo.png" alt="logo" className='w-[80px] md:w-[110px] ' width={120} height={120} />
                 </Link>
 
@@ -100,14 +100,14 @@ const Nav = () => {
                 {/* Desktop navigation */}
                 <div className="hidden lg:flex items-center space-x-6 cursor-pointer text-black">
                     <ul className="flex space-x-5 text-[16px] font-semibold">
-                        <li className={`hover:text-[#017fff] ${isLinkActive('/') ? 'border-b-[2px] pb-[4px] border-b-[#017fff] text-[#017fff]' : ''}`}>
-                            <Link href="/">Home</Link>
+                        <li className={`hover:text-[#017fff] ${isLinkActive('/international-education') ? 'border-b-[2px] pb-[4px] border-b-[#017fff] text-[#017fff]' : ''}`}>
+                            <Link href="/international-education">Home</Link>
                         </li>
-                        <li className={`hover:text-[#017fff] ${isLinkActive('/about') ? 'border-b-[2px] pb-[4px] border-b-[#017fff] text-[#017fff]' : ''}`}>
-                            <Link href="/about">Who We Are</Link>
+                        <li className={`hover:text-[#017fff] ${isLinkActive('/international-education/about') ? 'border-b-[2px] pb-[4px] border-b-[#017fff] text-[#017fff]' : ''}`}>
+                            <Link href="/international-education/about">Who We Are</Link>
                         </li>
-                        <li className={`hover:text-[#017fff] ${isLinkActive('/services') ? 'border-b-[2px] pb-[4px] border-b-[#017fff] text-[#017fff]' : ''}`}>
-                            <Link href="/services">Our Promise</Link>
+                        <li className={`hover:text-[#017fff] ${isLinkActive('/international-education/services') ? 'border-b-[2px] pb-[4px] border-b-[#017fff] text-[#017fff]' : ''}`}>
+                            <Link href="/international-education/services">Our Promise</Link>
                         </li>
 
                         {/* Study Dropdown */}
@@ -124,20 +124,20 @@ const Nav = () => {
                             {isDropdownOpen && (
                                 <div className="absolute top-full mt-2 left-0 bg-white border rounded-[10px] border-gray-500 shadow-lg py-2 px-4 w-[150px] z-30 text-[14px] font-semibold">
                                     <Link
-                                        href="/study/study-in-uk"
-                                        className={`block py-1 ${isLinkActive('/study/study-in-uk') ? 'border-b-[2px] pb-[4px] border-b-[#017fff] text-[#017fff]' : 'hover:text-[#017fff]'}`}
+                                        href="/international-education/study/study-in-uk"
+                                        className={`block py-1 ${isLinkActive('/international-education/study/study-in-uk') ? 'border-b-[2px] pb-[4px] border-b-[#017fff] text-[#017fff]' : 'hover:text-[#017fff]'}`}
                                     >
                                         Study in UK
                                     </Link>
                                     <Link
-                                        href="/study/study-in-usa"
-                                        className={`block py-1 ${isLinkActive('/study/study-in-usa') ? 'border-b-[2px] pb-[4px] border-b-[#017fff] text-[#017fff]' : 'hover:text-[#017fff]'}`}
+                                        href="/international-education/study/study-in-usa"
+                                        className={`block py-1 ${isLinkActive('/international-education/study/study-in-usa') ? 'border-b-[2px] pb-[4px] border-b-[#017fff] text-[#017fff]' : 'hover:text-[#017fff]'}`}
                                     >
                                         Study in USA
                                     </Link>
                                     <Link
-                                        href="/study/study-in-canada"
-                                        className={`block py-1 ${isLinkActive('/study/study-in-canada') ? 'border-b-[2px] pb-[4px] border-b-[#017fff] text-[#017fff]' : 'hover:text-[#017fff]'}`}
+                                        href="/international-education/study/study-in-canada"
+                                        className={`block py-1 ${isLinkActive('/international-education/study/study-in-canada') ? 'border-b-[2px] pb-[4px] border-b-[#017fff] text-[#017fff]' : 'hover:text-[#017fff]'}`}
                                     >
                                         Study in Canada
                                     </Link>
@@ -145,14 +145,14 @@ const Nav = () => {
                             )}
                         </li>
 
-                        <li className={`hover:text-[#017fff] ${isLinkActive('/events') ? 'border-b-[2px] pb-[4px] border-b-[#017fff] text-[#017fff]' : ''}`}>
-                            <Link href="/events">Events</Link>
+                        <li className={`hover:text-[#017fff] ${isLinkActive('/international-education/events') ? 'border-b-[2px] pb-[4px] border-b-[#017fff] text-[#017fff]' : ''}`}>
+                            <Link href="/international-education/events">Events</Link>
                         </li>
-                        <li className={`hover:text-[#017fff] ${isLinkActive('/blog') ? 'border-b-[2px] pb-[4px] border-b-[#017fff] text-[#017fff]' : ''}`}>
-                            <Link href="/blog">Blog</Link>
+                        <li className={`hover:text-[#017fff] ${isLinkActive('/international-education/blog') ? 'border-b-[2px] pb-[4px] border-b-[#017fff] text-[#017fff]' : ''}`}>
+                            <Link href="/international-education/blog">Blog</Link>
                         </li>
-                        <li className={`hover:text-[#017fff] ${isLinkActive('/contact') ? 'border-b-[2px] pb-[4px] border-b-[#017fff] text-[#017fff]' : ''}`}>
-                            <Link href="/contact">Contact</Link>
+                        <li className={`hover:text-[#017fff] ${isLinkActive('/international-education/contact') ? 'border-b-[2px] pb-[4px] border-b-[#017fff] text-[#017fff]' : ''}`}>
+                            <Link href="/international-education/contact">Contact</Link>
                         </li>
                     </ul>
 
@@ -186,72 +186,62 @@ const Nav = () => {
 
                         {/* Mobile Navigation Links */}
                         <ul className="flex flex-col space-y-4 text-[18px] font-semibold">
-                            <li className={`${isLinkActive('/') ? 'text-[#017fff]' : ''}`}>
-                                <Link href="/">Home</Link>
+                            <li className={`${isLinkActive('/international-education') ? 'text-[#017fff]' : ''}`}>
+                                <Link href="/international-education">Home</Link>
                             </li>
-                            <li className={`${isLinkActive('/about') ? 'text-[#017fff]' : ''}`}>
-                                <Link href="/about">Who We Are</Link>
+                            <li className={`${isLinkActive('/international-education/about') ? 'text-[#017fff]' : ''}`}>
+                                <Link href="/international-education/about">Who We Are</Link>
                             </li>
-                            <li className={`${isLinkActive('/services') ? 'text-[#017fff]' : ''}`}>
-                                <Link href="/services">Our Promise</Link>
+                            <li className={`${isLinkActive('/international-education/services') ? 'text-[#017fff]' : ''}`}>
+                                <Link href="/international-education/services">Our Promise</Link>
                             </li>
 
                             {/* Mobile Study Dropdown */}
                             <li>
                                 <button
                                     onClick={handleMobileDropdownToggle}
-                                    className={`flex items-center justify-between w-full ${isStudyActive ? 'text-[#017fff]' : ''}`}
+                                    className={`flex items-center space-x-1 ${isStudyActive ? 'text-[#017fff]' : ''}`}
                                 >
                                     <span>Study</span>
-                                    <span>
+                                    <span className={`transition-transform duration-300 ${isMobileDropdownOpen ? 'rotate-180' : 'rotate-0'}`}>
                                         {isMobileDropdownOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
                                     </span>
                                 </button>
 
                                 {isMobileDropdownOpen && (
-                                    <div className="mt-2 ml-4 space-y-2 text-[16px]">
-                                        <Link
-                                            href="/study/study-in-uk"
-                                            className={`block py-1 ${isLinkActive('/study/study-in-uk') ? 'text-[#017fff]' : ''}`}
-                                        >
-                                            Study in UK
-                                        </Link>
-                                        <Link
-                                            href="/study/study-in-usa"
-                                            className={`block py-1 ${isLinkActive('/study/study-in-usa') ? 'text-[#017fff]' : ''}`}
-                                        >
-                                            Study in USA
-                                        </Link>
-                                        <Link
-                                            href="/study/study-in-canada"
-                                            className={`block py-1 ${isLinkActive('/study/study-in-canada') ? 'text-[#017fff]' : ''}`}
-                                        >
-                                            Study in Canada
-                                        </Link>
-                                    </div>
+                                    <ul className="mt-2 ml-4 space-y-2 text-[16px]">
+                                        <li className={`${isLinkActive('/international-education/study/study-in-uk') ? 'text-[#017fff]' : ''}`}>
+                                            <Link href="/international-education/study/study-in-uk">Study in UK</Link>
+                                        </li>
+                                        <li className={`${isLinkActive('/international-education/study/study-in-usa') ? 'text-[#017fff]' : ''}`}>
+                                            <Link href="/international-education/study/study-in-usa">Study in USA</Link>
+                                        </li>
+                                        <li className={`${isLinkActive('/international-education/study/study-in-canada') ? 'text-[#017fff]' : ''}`}>
+                                            <Link href="/international-education/study/study-in-canada">Study in Canada</Link>
+                                        </li>
+                                    </ul>
                                 )}
                             </li>
 
-                            <li className={`${isLinkActive('/events') ? 'text-[#017fff]' : ''}`}>
-                                <Link href="/events">Events</Link>
+                            <li className={`${isLinkActive('/international-education/events') ? 'text-[#017fff]' : ''}`}>
+                                <Link href="/international-education/events">Events</Link>
                             </li>
-                            <li className={`${isLinkActive('/blog') ? 'text-[#017fff]' : ''}`}>
-                                <Link href="/blog">Blog</Link>
+                            <li className={`${isLinkActive('/international-education/blog') ? 'text-[#017fff]' : ''}`}>
+                                <Link href="/international-education/blog">Blog</Link>
                             </li>
-                            <li className={`${isLinkActive('/contact') ? 'text-[#017fff]' : ''}`}>
-                                <Link href="/contact">Contact</Link>
+                            <li className={`${isLinkActive('/international-education/contact') ? 'text-[#017fff]' : ''}`}>
+                                <Link href="/international-education/contact">Contact</Link>
                             </li>
                         </ul>
+                    </div>
 
-                        {/* Sports Button in Mobile */}
-                        <div className="mt-8">
-                            <Link href="https://www.sports.britishauc.com" target='_blank'>
-                                <button className='w-full border-dashed flex items-center justify-center border-black border rounded-md px-4 py-3'>
-                                    <span className='text-[16px] font-medium mr-2'>Sports</span>
-                                    <Image src="/ball.png" alt='' width={20} height={20} />
-                                </button>
-                            </Link>
-                        </div>
+                    <div className="mt-auto pb-6">
+                        <Link href="https://www.sports.britishauc.com" target='_blank'>
+                            <button className='space-x-[1px] border-dashed flex items-center border-black border rounded-md px-[6px] py-[8px]'>
+                                <span className='text-[16px] font-medium'>Sports</span>
+                                <Image src="/ball.png" alt='' width={20} height={20} />
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>
