@@ -6,6 +6,13 @@ import Image from 'next/image'
 import { ArrowDown } from 'lucide-react'
 
 export default function Home() {
+  const scrollToSection = () => {
+    document.getElementById('international-section').scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  }
+
   const categories = [
     {
       title: "International Education",
@@ -69,22 +76,23 @@ export default function Home() {
   }
 
   return (
-    <main className="relative h-fit md:h-screen w-full overflow-x-hidden">
+    <main className="relative w-full overflow-x-hidden">
       {/* Video Background */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className=" inset-0 w-full h-full object-cover fixed top-0 md:absolute"
-      >
-        <source src="/herobg.mp4" type="video/mp4" />
-      </video>
+      <div className="fixed inset-0 w-full h-full">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/herobg.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/60" />
+      </div>
 
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" />
-
-      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between h-screen px-6">
+      {/* Hero section */}
+      <div className="relative z-10 min-h-[100dvh] flex flex-col md:flex-row items-center justify-between px-6 py-20 md:py-0">
         {/* Left Side - Hero Content */}
         <div className="w-full md:w-1/2 pt-12 md:pt-0">
           <motion.div
@@ -103,7 +111,8 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="flex flex-col items-center w-fit h-fit gap-2"
+              className="flex flex-col items-center w-fit h-fit gap-2 cursor-pointer"
+              onClick={scrollToSection}
             >
               <motion.div
                 animate={{ y: [0, 10, 0] }}
@@ -112,7 +121,6 @@ export default function Home() {
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
-                className=""
               >
                 <ArrowDown className="w-20 h-20 text-white/80 mx-auto" />
               </motion.div>
@@ -233,6 +241,172 @@ export default function Home() {
           </motion.div>
         </div>
       </div>
+
+      {/* International Education Section */}
+      <section
+        id="international-section"
+        className="relative min-h-[100dvh] flex items-center py-20 md:py-0"
+      >
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/hero_banner.webp"
+            alt="International Education"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/90 to-purple-950/20" />
+        </div>
+
+        {/* Content */}
+        <div className="relative w-full max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center mb-12">
+            {/* Left Content */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-6"
+            >
+              <div className="space-y-4 max-w-xl">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+                  Study Abroad
+                </h2>
+                <p className="text-lg md:text-[18px] text-white/70 leading-relaxed">
+                  Join over 1000 Nigerian students who have successfully gained admission
+                  to prestigious universities worldwide through our comprehensive support system.
+                  We offer free visa and admission application services to universities worldwide.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { count: '1000+', label: 'Students Placed' },
+                  { count: '25+', label: 'Countries' },
+                  { count: '100%', label: 'Acceptance Rate' },
+                  { count: '14 Yrs', label: 'Experience' }
+                ].map((stat, index) => (
+                  <div key={index} className="space-y-1">
+                    <div className="text-2xl md:text-3xl font-bold text-white">{stat.count}</div>
+                    <div className="text-sm md:text-base text-white/70">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex items-center gap-6">
+                <Link
+                  href="/international-education"
+                  className="inline-flex items-center gap-2 bg-[#017fff] text-white px-8 py-3 rounded-full font-medium hover:bg-[#0165cc] transition-colors"
+                >
+                  Explore Program
+                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Right Content - Features Box */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, y: 0, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative bg-white rounded-3xl p-6 md:p-8 shadow-xl"
+            >
+              <div className="space-y-6">
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    'University Admissions',
+                    'Visa Support',
+                    'Test Preparation',
+                    'Career Guidance',
+                    'Scholarship Support',
+                    'Accommodation Help'
+                  ].map((feature, index) => (
+                    <span
+                      key={index}
+                      className="px-3 py-1.5 rounded-full bg-gray-100 text-gray-800 text-sm font-medium"
+                    >
+                      {feature}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="space-y-4">
+                  <h3 className="text-lg md:text-xl font-bold text-gray-900">Why Choose British AUC?</h3>
+                  <ul className="space-y-2">
+                    {[
+                      'Free visa and admission application services',
+                      '100% visa success rate',
+                      'Over a decade of success stories',
+                      'Expert admission specialists',
+                      '24/7 live support',
+                      'Ongoing support at study destination'
+                    ].map((item, index) => (
+                      <li key={index} className="flex items-center gap-2 text-gray-700 text-sm md:text-base">
+                        <svg className="w-5 h-5 text-green-500 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* How We Help Cards */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+              {[
+                {
+                  title: "Education Counseling",
+                  description: "Expert guidance for your academic journey and career decisions.",
+                  image: "/01.webp"
+                },
+                {
+                  title: "Visa Application",
+                  description: "100% success rate in visa applications with complete documentation support.",
+                  image: "/02.webp"
+                },
+                {
+                  title: "Scholarship Support",
+                  description: "Access to scholarships and financial aid opportunities worldwide.",
+                  image: "/03.webp"
+                }
+              ].map((card, index) => (
+                <div
+                  key={index}
+                  className="group bg-white/10 backdrop-blur-sm cursor-pointer rounded-2xl border-4 border-gray-50 overflow-hidden shadow-xl"
+                >
+                  <div className="relative h-[230px] overflow-hidden">
+                    <Image
+                      src={card.image}
+                      alt={card.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-black/20" />
+                    <div className="py-2 px-4 absolute bg-white backdrop-blur-sm rounded-[15px] w-[95%] left-[50%] -translate-x-[50%] bottom-2 shadow-lg">
+                      <h3 className="text-[15px] font-bold text-gray-800 mb-[2px]">{card.title}</h3>
+                      <p className="text-gray-600 text-[12px] font-medium leading-tight">{card.description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </main>
   )
 }
