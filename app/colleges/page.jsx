@@ -312,7 +312,7 @@ const Page = () => {
                             {program.features.map((feature, idx) => (
                               <div
                                 key={idx}
-                                className="flex items-center gap-2 text-white/90 bg-white/10 backdrop-blur-sm rounded-xl p-3"
+                                className="flex items-center gap-2 text-white/90 bg-black/50 backdrop-blur-lg rounded-xl p-3"
                               >
                                 <CheckCircle2 className="w-5 h-5 text-blue-400 flex-shrink-0" />
                                 <span className="text-sm font-medium">{feature}</span>
@@ -377,7 +377,7 @@ const Page = () => {
 
       {/* CTA Section */}
       <section className="relative py-20 px-6">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -394,7 +394,7 @@ const Page = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-blue-700/50 to-blue-600/50 backdrop-blur-sm" />
             </div>
 
-            <div className="relative p-12 md:p-16">
+            <div className="relative py-10 px-6 md:p-16">
               <div className="max-w-2xl">
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                   Ready to Start Your International Education Journey?
