@@ -11,19 +11,19 @@ const academies = [
     title: "Manchester Football Academy",
     description: "For students studying in the Manchester area and environs who wish to develop their football skills alongside their studies.",
     image: "/manchesteracademy.jpg",
-    link: "/sports/manchester"
+    link: "https://sports.britishauc.com/academy/manchester"
   },
   {
     title: "London Football Academy",
     description: "Premier football development program in London for students combining education with elite football training.",
     image: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=1000",
-    link: "/sports/london"
+    link: "https://sports.britishauc.com/academy/london"
   },
   {
     title: "Debrecen Football Academy",
     description: "Experience Hungarian football excellence and top-tier training while pursuing your education in Debrecen.",
     image: "/debrecenacademy.jpg",
-    link: "/sports/debrecen"
+    link: "https://sports.britishauc.com/academy/debrecen"
   }
 ]
 
@@ -475,7 +475,7 @@ export default function Home() {
 
               <div className="flex flex-wrap gap-4">
                 <Link
-                  href="/sports/programs"
+                  href="https://sports.britishauc.com"
                   className="inline-flex items-center gap-2 bg-red-600 text-white px-8 py-3 rounded-full font-medium hover:bg-red-700 transition-colors"
                 >
                   Explore Programs
@@ -577,17 +577,19 @@ export default function Home() {
                   title: "Manchester Football Trial",
                   date: "Registration Deadline: 1st July",
                   badge: "Limited Spots",
-                  badgeColor: "bg-red-500"
+                  badgeColor: "bg-red-500",
+                  link: "https://sports.britishauc.com/events/manchester-trial"
                 },
                 {
                   title: "West Ham United Summer Trip",
                   date: "29 July - 4 August 2025",
                   badge: "Premium",
-                  badgeColor: "bg-blue-500"
+                  badgeColor: "bg-blue-500",
+                  link: "https://sports.britishauc.com/events/west-ham-trip"
                 }
               ].map((event, index) => (
                 <Link
-                  href="#"
+                  href={event.link}
                   key={index}
                   className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-colors"
                 >

@@ -8,12 +8,12 @@ export const navContacts = [
     },
     {
         key: 2,
-        contact: "+234 (0) 903 394 2463 (Africa)",
+        contact: "+234 (0) 805 900 0097 (Africa)",
         image: "/phone.png"
     },
     {
         key: 3,
-        contact: "contact@britishauc.com",
+        contact: "admin@britishauc.com",
         image: "/mail.png"
     },
 ]
@@ -258,7 +258,7 @@ export const eventList = [
         contactEmail: "events@britishauc.com",
         contactPhone: "+234 (0) 903 394 2463"
     },
-  
+
 ]
 
 
