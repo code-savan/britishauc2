@@ -106,7 +106,7 @@ export const inq1 = [
     {
         key: 3,
         icon: "/mail.png",
-        content: "contact@britishauc.com"
+        content: "admin@britishauc.com"
     },
     {
         key: 3,
@@ -125,7 +125,7 @@ export const inq2 = [
     {
         key: 3,
         icon: "/mail.png",
-        content: "contact@britishauc.com / abuja@britishauc.com"
+        content: "admin@britishauc.com / abuja@britishauc.com"
     },
     {
         key: 3,
@@ -256,7 +256,7 @@ export const eventList = [
         participatingUniversities: [],
         contactPerson: "Events Team",
         contactEmail: "events@britishauc.com",
-        contactPhone: "+234 (0) 903 394 2463"
+        contactPhone: "+234 (0) 805 900 0097"
     },
 
 ]
