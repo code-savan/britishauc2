@@ -1,11 +1,42 @@
 "use client"
 
 import Link from 'next/link'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import { ArrowDown } from 'lucide-react'
+import { useState, useEffect } from 'react'
+
+const academies = [
+  {
+    title: "Manchester Football Academy",
+    description: "For students studying in the Manchester area and environs who wish to develop their football skills alongside their studies.",
+    image: "/manchester.webp",
+    link: "/sports/manchester"
+  },
+  {
+    title: "London Football Academy",
+    description: "Premier football development program in London for students combining education with elite football training.",
+    image: "/04.webp",
+    link: "/sports/london"
+  },
+  {
+    title: "Debrecen Football Academy",
+    description: "Experience Hungarian football excellence and top-tier training while pursuing your education in Debrecen.",
+    image: "/05.webp",
+    link: "/sports/debrecen"
+  }
+]
 
 export default function Home() {
+  const [currentAcademy, setCurrentAcademy] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentAcademy((prev) => (prev + 1) % academies.length)
+    }, 5000)
+    return () => clearInterval(timer)
+  }, [])
+
   const scrollToSection = () => {
     document.getElementById('international-section').scrollIntoView({
       behavior: 'smooth',
@@ -17,23 +48,23 @@ export default function Home() {
     {
       title: "International Education",
       href: "/international-education",
-      description: "Study in top universities worldwide. We've helped over 1000 Nigerian students gain admission in 25+ countries.",
-      stats: "1000+ Students",
+      description: "Study in top universities worldwide. We've helped over 100 Nigerian students gain admission in 25+ countries.",
+      stats: "100+ Students",
       icon: "/study1.svg",
       bgImage: "/hero_banner.webp",
       programType: "Full-time",
-      author: "British AUC Team",
+      author: "Learn More",
       features: ["University Admissions", "Visa Support", "Test Prep"]
     },
     {
       title: "Sports",
       href: "https://sports.britishauc.com/",
-      description: "Elite sports development programs and scholarships for talented athletes.",
+      description: "Elite football/sports development programmes and connections to UK, European football/sport clubs and academies.",
       stats: "50+ Partners",
       icon: "/ball.png",
       bgImage: "https://images.unsplash.com/photo-1650409590770-79bad78b5a16?q=80&w=2940",
       programType: "Full-time",
-      author: "Sports Division",
+      author: "Learn More",
       features: ["Sports Scholarships", "Training Camps", "Pro Trials"]
     },
     {
@@ -44,18 +75,18 @@ export default function Home() {
       icon: "/w4.svg",
       bgImage: "https://images.unsplash.com/photo-1628654294459-95e732c1385a?q=80&w=2940",
       programType: "Seasonal",
-      author: "Camp Coordinators",
+      author: "Learn More",
       features: ["Summer Programs", "Winter Camps", "Leadership"]
     },
     {
-      title: "College",
+      title: "British AUC University Pathway",
       href: "/colleges",
-      description: "Comprehensive college preparation and placement services for local institutions.",
-      stats: "100+ Colleges",
+      description: "Comprehensive university pathway to Oxbridge and Ivy-league universities",
+      stats: "100+ Partners",
       icon: "/p3.svg",
       bgImage: "https://images.unsplash.com/photo-1741638511412-d1657179c505?q=80&w=3087",
-      programType: "Part-time",
-      author: "College Advisory",
+      programType: "Full-time",
+      author: "Learn More",
       features: ["College Prep", "Career Guidance", "Admissions"]
     }
   ]
@@ -172,15 +203,15 @@ export default function Home() {
                     </div>
 
                     {/* Content Overlay */}
-                    <div className="relative h-full p-6 flex flex-col">
+                    <div className="relative h-full p-4 flex flex-col">
                       {/* Top Section */}
                       <div className="flex flex-col mb-auto">
-                        <div className="flex items-center justify-between">
+                        <div className="flex items-center justify-between mb-1">
 
                           <h3 className="text-[18px] font-bold text-white/90 w-full group-hover:text-white transition-colors drop-shadow-sm leading-tight">
                             {category.title}
                           </h3>
-                          <div className="ml-4 flex items-center justify-center max-w-[90px] h-[30px] rounded-full bg-black/30 backdrop-blur-md text-white/95 group-hover:text-white text-xs font-semibold border border-white/10 w-full">
+                          <div className="ml-1 flex items-center justify-center max-w-[90px] h-[30px] rounded-full bg-black/30 backdrop-blur-md text-white/95 group-hover:text-white text-xs font-semibold border border-white/10 w-full mt-1">
                             <span>
                               {category.programType}
                             </span>
@@ -402,6 +433,185 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Sports Academy Section */}
+      <section className="relative h-[100dvh] flex items-center">
+        {/* Background */}
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=2940&auto=format&fit=crop"
+            alt="Football Academy"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/90 to-black/50" />
+        </div>
+
+        {/* Content */}
+        <div className="relative w-full max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+            {/* Left Content */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-8"
+            >
+              <div className="space-y-6">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-50">
+                  British AUC <span className='text-red-500'>SPORT</span>
+                </h2>
+                <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+                  Connecting talented athletes with exceptional opportunities through professional trials, academy experiences, and elite training programs.
+                </p>
+              </div>
+
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  href="/sports/programs"
+                  className="inline-flex items-center gap-2 bg-red-600 text-white px-8 py-3 rounded-full font-medium hover:bg-red-700 transition-colors"
+                >
+                  Explore Programs
+                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Right Content - Academy Slider */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="w-full md:w-[500px]"
+            >
+              <div className="relative aspect-[16/10] w-full">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentAcademy}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.5 }}
+                    className="absolute inset-0"
+                  >
+                    <Link
+                      href={academies[currentAcademy].link}
+                      className="group relative h-full w-full overflow-hidden rounded-2xl border-4 border-gray-50 shadow-xl"
+                    >
+                      <div className=" bg-red-500 absolute inset-0 right-0 left-0 w-full h-full bottom-0 border-4 border-gray-50">
+                        <Image
+                          src={academies[currentAcademy].image}
+                          alt={academies[currentAcademy].title}
+                          width={500}
+                          height={500}
+                          className="object-cover w-full group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/80" />
+                      </div>
+                      <div className="relative h-full flex flex-col justify-end p-6">
+                        <h3 className="text-2xl font-bold text-gray-50 mb-3">
+                          {academies[currentAcademy].title}
+                        </h3>
+                        <p className="text-gray-200/90 text-sm mb-4">
+                          {academies[currentAcademy].description}
+                        </p>
+                        <span className="inline-flex items-center gap-2 text-gray-50 font-medium text-sm bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 w-fit">
+                          Learn More
+                          <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </span>
+                      </div>
+                    </Link>
+                  </motion.div>
+                </AnimatePresence>
+
+                {/* Dots */}
+                <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-2">
+                  {academies.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentAcademy(index)}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        index === currentAcademy
+                          ? 'bg-gray-50 w-4'
+                          : 'bg-gray-50/40 hover:bg-gray-50/60'
+                      }`}
+                      aria-label={`Go to slide ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Events Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mt-20"
+          >
+            <div className="flex items-center gap-4 mb-8">
+              <h2 className="text-3xl font-bold text-white">
+                Upcoming Events
+              </h2>
+              <span className="px-3 py-1 bg-blue-500 text-white text-sm rounded-full">
+                2025
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {[
+                {
+                  title: "Manchester Football Trial",
+                  date: "Registration Deadline: 15th April",
+                  badge: "Limited Spots",
+                  badgeColor: "bg-red-500"
+                },
+                {
+                  title: "West Ham United Summer Trip",
+                  date: "29 July - 4 August",
+                  badge: "Premium",
+                  badgeColor: "bg-blue-500"
+                }
+              ].map((event, index) => (
+                <Link
+                  href="#"
+                  key={index}
+                  className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-colors"
+                >
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <h3 className="text-xl font-bold text-white mb-2">
+                        {event.title}
+                      </h3>
+                      <p className="text-white/60 text-sm">
+                        {event.date}
+                      </p>
+                    </div>
+                    <span className={`${event.badgeColor} px-3 py-1 rounded-full text-xs font-medium text-white`}>
+                      {event.badge}
+                    </span>
+                  </div>
+                  <div className="mt-6 flex items-center gap-2 text-white/80 text-sm group-hover:text-white transition-colors">
+                    Learn More
+                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
+                      <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                </Link>
               ))}
             </div>
           </motion.div>
