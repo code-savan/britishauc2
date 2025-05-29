@@ -492,29 +492,29 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="w-full md:w-[500px]"
+              className="w-full"
             >
               <div className="relative aspect-[16/10] w-full">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={currentAcademy}
-                    initial={{ opacity: 0, x: 20 }}
+                    initial={{ opacity: 0, x: 0 }}
                     animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
+                    exit={{ opacity: 40, x: 0 }}
                     transition={{ duration: 0.5 }}
                     className="absolute inset-0"
                   >
                     <Link
                       href={academies[currentAcademy].link}
-                      className="group relative h-full w-full overflow-hidden rounded-2xl border-4 border-gray-50 shadow-xl"
+                      className="group relative h-full w-full overflow-hidden rounded-2xl  shadow-xl"
                     >
-                      <div className=" bg-red-500 absolute inset-0 right-0 left-0 w-full h-full bottom-0 border-4 border-gray-50">
+                      <div className="overflow-hidden backdrop-blur-xl bg-black/50 absolute inset-0 right-0 left-0 w-full h-full bottom-0 rounded-2xl">
                         <Image
                           src={academies[currentAcademy].image}
                           alt={academies[currentAcademy].title}
                           width={500}
                           height={500}
-                          className="object-cover w-full group-hover:scale-105 transition-transform duration-500"
+                          className="object-cover w-full rounded-2xl h-full group-hover:scale-105 transition-transform duration-500"
                         />
                         <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/80" />
                       </div>
@@ -537,7 +537,7 @@ export default function Home() {
                 </AnimatePresence>
 
                 {/* Dots */}
-                <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-2">
+                <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex py-2 w-[96%] items-center justify-center gap-2 backdrop-blur-3xl bg-black/60 rounded-b-2xl">
                   {academies.map((_, index) => (
                     <button
                       key={index}
