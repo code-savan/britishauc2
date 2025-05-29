@@ -440,7 +440,7 @@ export default function Home() {
       </section>
 
       {/* Sports Academy Section */}
-      <section className="relative h-[100dvh] flex items-center">
+      <section className="relative min-h-[100dvh] flex items-center py-20 md:py-0">
         {/* Background */}
         <div className="absolute inset-0">
           <Image
@@ -454,21 +454,21 @@ export default function Home() {
         </div>
 
         {/* Content */}
-        <div className="relative w-full max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+        <div className="relative w-full md:max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
             {/* Left Content */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="space-y-8"
+              className="space-y-8 w-full"
             >
               <div className="space-y-6">
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-50">
                   British AUC <span className='text-red-500'>SPORT</span>
                 </h2>
-                <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+                <p className="text-lg w-full md:text-xl text-gray-200 md:text-gray-300 leading-relaxed">
                   Connecting talented athletes with exceptional opportunities through professional trials, academy experiences, and elite training programs.
                 </p>
               </div>
@@ -494,7 +494,7 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="w-full"
             >
-              <div className="relative aspect-[16/10] w-full">
+              <div className="relative aspect-[16/10] w-full h-[300px] md:h-auto">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={currentAcademy}
@@ -506,14 +506,13 @@ export default function Home() {
                   >
                     <Link
                       href={academies[currentAcademy].link}
-                      className="group relative h-full w-full overflow-hidden rounded-2xl  shadow-xl"
+                      className="group relative h-full w-full overflow-hidden rounded-2xl shadow-xl"
                     >
                       <div className="overflow-hidden backdrop-blur-xl bg-black/50 absolute inset-0 right-0 left-0 w-full h-full bottom-0 rounded-2xl">
                         <Image
                           src={academies[currentAcademy].image}
                           alt={academies[currentAcademy].title}
-                          width={500}
-                          height={500}
+                          fill
                           className="object-cover w-full rounded-2xl h-full group-hover:scale-105 transition-transform duration-500"
                         />
                         <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/70" />
@@ -601,7 +600,7 @@ export default function Home() {
                         {event.date}
                       </p>
                     </div>
-                    <span className={`${event.badgeColor} px-3 py-1 rounded-full text-xs font-medium text-white`}>
+                    <span className={`${event.badgeColor} flex justify-center items-center h-[30px] w-[120px] rounded-full text-xs font-medium text-white`}>
                       {event.badge}
                     </span>
                   </div>
