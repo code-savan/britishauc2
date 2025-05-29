@@ -10,19 +10,19 @@ const academies = [
   {
     title: "Manchester Football Academy",
     description: "For students studying in the Manchester area and environs who wish to develop their football skills alongside their studies.",
-    image: "/manchester.webp",
+    image: "/manchesteracademy.jpg",
     link: "/sports/manchester"
   },
   {
     title: "London Football Academy",
     description: "Premier football development program in London for students combining education with elite football training.",
-    image: "/04.webp",
+    image: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=1000",
     link: "/sports/london"
   },
   {
     title: "Debrecen Football Academy",
     description: "Experience Hungarian football excellence and top-tier training while pursuing your education in Debrecen.",
-    image: "/05.webp",
+    image: "/debrecenacademy.jpg",
     link: "/sports/debrecen"
   }
 ]
@@ -516,7 +516,7 @@ export default function Home() {
                           height={500}
                           className="object-cover w-full rounded-2xl h-full group-hover:scale-105 transition-transform duration-500"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/80" />
+                        <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/70" />
                       </div>
                       <div className="relative h-full flex flex-col justify-end p-6">
                         <h3 className="text-2xl font-bold text-gray-50 mb-3">
@@ -576,13 +576,13 @@ export default function Home() {
               {[
                 {
                   title: "Manchester Football Trial",
-                  date: "Registration Deadline: 15th April",
+                  date: "Registration Deadline: 1st July",
                   badge: "Limited Spots",
                   badgeColor: "bg-red-500"
                 },
                 {
                   title: "West Ham United Summer Trip",
-                  date: "29 July - 4 August",
+                  date: "29 July - 4 August 2025",
                   badge: "Premium",
                   badgeColor: "bg-blue-500"
                 }
