@@ -115,7 +115,10 @@ export default function Home() {
           muted
           loop
           playsInline
+          defaultMuted
+          webkit-playsinline="true"
           className="absolute inset-0 w-full h-full object-cover"
+          preload="auto"
         >
           <source src="/herobg.mp4" type="video/mp4" />
         </video>
