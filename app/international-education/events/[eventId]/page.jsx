@@ -255,7 +255,7 @@ export default function EventDetailPage({ params }) {
                   <div dangerouslySetInnerHTML={{ __html: event.detailedDescription.replace(/\n/g, '<br/>') }}></div>
                 </div>
                 <div className="flex-1 bg-gray-200">
-                    <Image src="/tour2025.png" alt="Event Image" width={500} height={500} className="w-full h-auto" />
+                    <Image src={event.image} alt="Event Image" width={500} height={500} className="w-full h-auto" />
                 </div>
               </div>
             </div>
