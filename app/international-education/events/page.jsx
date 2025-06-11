@@ -41,7 +41,7 @@ const page = () => {
                             </div>
                             <div className='w-full mt-4 flex justify-center mb-4 px-2 h-[10%]'>
                             {item.showLink && (
-                                <Link href={`/events/${item.id}`} className='rounded-[10px] py-[8px] px-6 sm:px-8 font-bold bg-black text-white text-xs sm:text-[12px] hover:bg-gray-800 transition-colors no-underline inline-block'>
+                                <Link href={`/international-education/events/${item.id}`} className='rounded-[10px] py-[8px] px-6 sm:px-8 font-bold bg-black text-white text-xs sm:text-[12px] hover:bg-gray-800 transition-colors no-underline inline-block'>
                                 More Information
                                 </Link>
                             )}
