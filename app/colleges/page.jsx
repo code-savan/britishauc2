@@ -3,8 +3,9 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowLeft, GraduationCap, BookOpen, Globe, Award, Users, School, Star, CheckCircle2, ArrowRight, Flag } from 'lucide-react'
+import { GraduationCap, BookOpen, Globe, Award, Users, School, Star, CheckCircle2, ArrowRight, Flag } from 'lucide-react'
 import Image from 'next/image'
+import NavBar from './NavBar'
 
 const programs = [
   {
@@ -63,6 +64,7 @@ const Page = () => {
 
   return (
     <div className="min-h-screen w-full bg-[#0A0F1C]">
+      <NavBar />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center">
         <div className="absolute inset-0">
@@ -75,15 +77,6 @@ const Page = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1C]/90 via-[#0A0F1C]/80 to-[#0A0F1C]" />
         </div>
-
-        {/* Back Button */}
-        <Link
-          href="/"
-          className="absolute md:top-8 md:left-8 top-4 left-8 text-white/80 hover:text-white flex items-center gap-2 transition-colors z-50 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full"
-        >
-          <ArrowLeft className="w-5 h-5" />
-          <span>Back</span>
-        </Link>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
           <motion.div
@@ -101,30 +94,14 @@ const Page = () => {
                   className="inline-flex items-center gap-2 bg-blue-500/60 text-blue-50 px-4 py-2 rounded-full text-sm font-semibold cursor-pointer"
                 >
                   <Flag className="w-4 h-4" />
-                  British AUC University Pathway
+                  BRITISH AUC UNIVERSITY PATHWAY
                 </motion.div>
                 <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
-                  Achieving Your <span className="text-blue-400">International</span> Qualification
+                  Your Pathway to <span className="text-blue-400">Prestigious University Undergraduate Degree</span>
                 </h1>
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  Preparing Students for A-Level, International Foundation Year, International Year One & Two, and SELT.
+                  Welcome to British AUC University Pathway, we help you prepare for entry into leading universities worldwide. Our programs provide the skills and support you need to succeed, offering a smooth transition to top global institutions. Start your journey with us today.
                 </p>
-              </div>
-
-              <div className="flex flex-wrap gap-4">
-                <Link
-                  href="#programs"
-                  className="inline-flex items-center gap-2 bg-blue-500 text-white px-8 py-3 rounded-xl font-medium hover:bg-blue-600 transition-colors"
-                >
-                  Explore Programs
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 md:bg-white/10 bg-white/80 text-black/70 md:text-white px-8 py-3 rounded-xl font-medium hover:bg-white/20 transition-colors"
-                >
-                  Contact Us
-                </Link>
               </div>
 
               <div className="grid grid-cols-3 gap-6">
