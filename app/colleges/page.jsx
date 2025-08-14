@@ -6,10 +6,11 @@ import Link from 'next/link'
 import { GraduationCap, BookOpen, Globe, Award, Users, School, Star, CheckCircle2, ArrowRight, Flag } from 'lucide-react'
 import Image from 'next/image'
 import NavBar from './NavBar'
+import Footer from './Footer'
 
-const programs = [
+const programmes = [
   {
-    title: "A-Level Program",
+    title: "A-Level Programme",
     description: "Internationally recognized qualification opening doors to top-tier universities worldwide.",
     icon: GraduationCap,
     features: ["Expert teachers", "Robust curriculum", "Global recognition"],
@@ -24,7 +25,7 @@ const programs = [
   },
   {
     title: "International Year One & Two",
-    description: "Earn university credits while completing the equivalent of the first and second years of a degree program.",
+    description: "Earn university credits while completing the equivalent of the first and second years of a degree programme.",
     icon: School,
     features: ["Direct university pathway", "Credit transfer", "Smooth transition"],
     image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=2940"
@@ -60,22 +61,22 @@ const features = [
 ]
 
 const Page = () => {
-  const [activeProgram, setActiveProgram] = useState(0)
+  const [activeProgramme, setActiveProgramme] = useState(0)
 
   return (
-    <div className="min-h-screen w-full bg-[#0A0F1C]">
+    <div className="min-h-screen w-full bg-white">
       <NavBar />
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center">
+      <section className="relative min-h-screen flex items-center justify-center bg-gray-50 border pt-10">
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2940"
             alt="University Education"
             fill
-            className="object-cover object-center"
+            className="object-cover object-center opacity-10"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1C]/90 via-[#0A0F1C]/80 to-[#0A0F1C]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/80 to-white" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
@@ -91,16 +92,16 @@ const Page = () => {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.2 }}
-                  className="inline-flex items-center gap-2 bg-blue-500/60 text-blue-50 px-4 py-2 rounded-full text-sm font-semibold cursor-pointer"
+                  className="inline-flex items-center gap-2 shadow-sm bg-red-600 text-white px-4 py-1.5 rounded-full text-xs font-semibold cursor-pointer"
                 >
                   <Flag className="w-4 h-4" />
                   BRITISH AUC UNIVERSITY PATHWAY
                 </motion.div>
-                <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
-                  Your Pathway to <span className="text-blue-400">Prestigious University Undergraduate Degree</span>
+                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+                  Your Pathway to <span className="text-red-600">Prestigious University Undergraduate Degree</span>
                 </h1>
-                <p className="text-lg text-gray-300 leading-relaxed">
-                  Welcome to British AUC University Pathway, we help you prepare for entry into leading universities worldwide. Our programs provide the skills and support you need to succeed, offering a smooth transition to top global institutions. Start your journey with us today.
+                <p className="text-sm text-gray-800/90 leading-relaxed">
+                  Welcome to British AUC University Pathway, we help you prepare for entry into leading universities worldwide. Our programmes provide the skills and support you need to succeed, offering a smooth transition to top global institutions. Start your journey with us today.
                 </p>
               </div>
 
@@ -111,10 +112,10 @@ const Page = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 + index * 0.1 }}
-                    className="text-center border-2 rounded-lg md:py-2 md:px-1 p-[2px] border-blue-400/20 cursor-pointer flex flex-col items-center justify-center"
+                    className="text-center border-2 rounded-lg md:py-2 md:px-1 p-[2px] border-red-400/80 cursor-pointer flex flex-col items-center justify-center bg-white shadow-sm hover:shadow-md transition-shadow"
                   >
-                    <div className="md:text-[18px] text-[15px] font-bold text-blue-400 mb-1">{feature.stats}</div>
-                    <div className="text-sm text-gray-300 font-medium">{feature.title}</div>
+                    <div className="md:text-[16px] text-[15px] font-bold text-red-600">{feature.stats}</div>
+                    <div className="text-xs text-gray-700 font-medium">{feature.title}</div>
                   </motion.div>
                 ))}
               </div>
@@ -125,7 +126,7 @@ const Page = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.3 }}
-                className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 group cursor-pointer"
+                className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-gray-200 group cursor-pointer shadow-lg"
               >
                 <Image
                   src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=3540"
@@ -135,15 +136,15 @@ const Page = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               </motion.div>
-              <div className="absolute -bottom-6 -right-6 group-hover:scale-105 transition-transform duration-500 md:w-24 md:h-24 w-16 h-16 bg-blue-500 rounded-2xl -z-10" />
-              <div className="absolute md:-top-6 md:-left-6 -top-4 -left-4 md:w-32 md:h-32 w-20 h-20 border-2 border-blue-500/40 rounded-2xl -z-10 group-hover:scale-105 transition-transform duration-500" />
+              <div className="absolute -bottom-6 -right-6 group-hover:scale-105 transition-transform duration-500 md:w-24 md:h-24 w-16 h-16 bg-red-600 rounded-2xl -z-10" />
+              <div className="absolute md:-top-6 md:-left-6 -top-4 -left-4 md:w-32 md:h-32 w-20 h-20 border-2 border-red-600/40 rounded-2xl -z-10 group-hover:scale-105 transition-transform duration-500" />
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Programs Section */}
-      <section id="programs" className="relative py-20">
+      <section id="programmes" className="relative py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0 }}
@@ -151,42 +152,42 @@ const Page = () => {
             viewport={{ once: true }}
             className="text-center mb-16 space-y-4"
           >
-            <h2 className="text-3xl md:text-5xl font-bold text-white">
-              Our Pathway Programs
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+              Our Pathway Programmes
             </h2>
-            <p className="text-lg text-gray-300/70 max-w-2xl mx-auto">
+            <p className="text-md text-gray-600 max-w-2xl mx-auto">
               Comprehensive academic preparation designed to ensure your success in international education.
             </p>
           </motion.div>
 
           {/* Desktop View */}
-          <div className="hidden md:grid md:grid-cols-12 gap-8 items-start">
+          <div className="hidden md:grid md:grid-cols-12 gap-8 items-center">
             {/* Program List */}
             <div className="md:col-span-4 space-y-4">
-              {programs.map((program, index) => (
+              {programmes.map((programme, index) => (
                 <motion.button
                   key={index}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  onClick={() => setActiveProgram(index)}
+                  onClick={() => setActiveProgramme(index)}
                   className={`w-full text-left p-6 rounded-2xl transition-all duration-300 ${
-                    activeProgram === index
-                      ? 'bg-blue-500 text-white'
-                      : 'bg-white/5 text-white/70 hover:bg-white/10'
+                    activeProgramme === index
+                      ? 'bg-red-600 text-white shadow-lg'
+                      : 'bg-gray-50 text-gray-700 hover:bg-gray-100 border border-gray-200'
                   }`}
                 >
                   <div className="flex items-start gap-4">
-                    <program.icon className={`w-6 h-6 ${
-                      activeProgram === index ? 'text-white' : 'text-blue-400'
+                    <programme.icon className={`w-6 h-6 ${
+                      activeProgramme === index ? 'text-white' : 'text-red-600'
                     }`} />
                     <div>
-                      <h3 className="font-semibold mb-1">{program.title}</h3>
+                      <h3 className="font-semibold mb-1">{programme.title}</h3>
                       <p className={`text-sm ${
-                        activeProgram === index ? 'text-white/80' : 'text-gray-400'
+                        activeProgramme === index ? 'text-white/90' : 'text-gray-600'
                       }`}>
-                        {program.description}
+                        {programme.description}
                       </p>
                     </div>
                   </div>
@@ -198,31 +199,31 @@ const Page = () => {
             <div className="md:col-span-8">
               <AnimatePresence mode="wait">
                 <motion.div
-                  key={activeProgram}
+                  key={activeProgramme}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3 }}
-                  className="relative aspect-[16/9] rounded-2xl overflow-hidden"
+                  className="relative rounded-2xl overflow-hidden shadow-xl h-[580px]"
                 >
                   <Image
-                    src={programs[activeProgram].image}
-                    alt={programs[activeProgram].title}
+                    src={programmes[activeProgramme].image}
+                    alt={programmes[activeProgramme].title}
                     fill
                     className="object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
                   <div className="absolute inset-0 p-8 flex flex-col justify-end">
                     <h3 className="text-2xl font-bold text-white mb-4">
-                      {programs[activeProgram].title}
+                      {programmes[activeProgramme].title}
                     </h3>
                     <div className="grid grid-cols-3 gap-4">
-                      {programs[activeProgram].features.map((feature, idx) => (
+                      {programmes[activeProgramme].features.map((feature, idx) => (
                         <div
                           key={idx}
                           className="flex items-center gap-2 text-white/90 bg-white/10 backdrop-blur-sm rounded-xl p-3"
                         >
-                          <CheckCircle2 className="w-5 h-5 text-blue-400" />
+                          <CheckCircle2 className="w-5 h-5 text-red-400" />
                           <span className="text-sm font-medium">{feature}</span>
                         </div>
                       ))}
@@ -235,7 +236,7 @@ const Page = () => {
 
           {/* Mobile View */}
           <div className="md:hidden space-y-4">
-            {programs.map((program, index) => (
+            {programmes.map((programme, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 10 }}
@@ -245,30 +246,30 @@ const Page = () => {
                 className="overflow-hidden"
               >
                 <motion.button
-                  onClick={() => setActiveProgram(index)}
+                  onClick={() => setActiveProgramme(index)}
                   className={`w-full text-left p-6 rounded-t-2xl transition-all duration-300 ${
-                    activeProgram === index
-                      ? 'bg-blue-500 text-white rounded-b-none'
-                      : 'bg-white/5 text-white/70 hover:bg-white/10 rounded-2xl'
+                    activeProgramme === index
+                      ? 'bg-red-600 text-white rounded-b-none'
+                      : 'bg-gray-50 text-gray-700 hover:bg-gray-100 rounded-2xl border border-gray-200'
                   }`}
                 >
                   <div className="flex items-start gap-4">
-                    <program.icon className={`w-6 h-6 ${
-                      activeProgram === index ? 'text-white' : 'text-blue-400'
+                    <programme.icon className={`w-6 h-6 ${
+                      activeProgramme === index ? 'text-white' : 'text-red-600'
                     }`} />
                     <div className="flex-1">
-                      <h3 className="font-semibold mb-1">{program.title}</h3>
+                      <h3 className="font-semibold mb-1">{programme.title}</h3>
                       <p className={`text-sm ${
-                        activeProgram === index ? 'text-white/80' : 'text-gray-400'
+                        activeProgramme === index ? 'text-white/90' : 'text-gray-600'
                       }`}>
-                        {program.description}
+                        {programme.description}
                       </p>
                     </div>
                   </div>
                 </motion.button>
 
                 <AnimatePresence>
-                  {activeProgram === index && (
+                  {activeProgramme === index && (
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
@@ -278,20 +279,20 @@ const Page = () => {
                     >
                       <div className="relative aspect-[16/9] w-full">
                         <Image
-                          src={program.image}
-                          alt={program.title}
+                          src={programme.image}
+                          alt={programme.title}
                           fill
                           className="object-cover"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
                         <div className="absolute inset-0 p-6 flex flex-col justify-end">
                           <div className="grid grid-cols-1 gap-2">
-                            {program.features.map((feature, idx) => (
+                            {programme.features.map((feature, idx) => (
                               <div
                                 key={idx}
                                 className="flex items-center gap-2 text-white/90 bg-black/50 backdrop-blur-lg rounded-xl p-3"
                               >
-                                <CheckCircle2 className="w-5 h-5 text-blue-400 flex-shrink-0" />
+                                <CheckCircle2 className="w-5 h-5 text-red-400 flex-shrink-0" />
                                 <span className="text-sm font-medium">{feature}</span>
                               </div>
                             ))}
@@ -308,8 +309,8 @@ const Page = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-blue-500/5" />
+      <section className="relative py-20 overflow-hidden flex flex-col items-center justify-center h-screen">
+        <div className="absolute inset-0 bg-black " />
         <div className="absolute inset-0">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[120%] h-40 bg-[#0A0F1C] blur-3xl" />
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[120%] h-40 bg-[#0A0F1C] blur-3xl" />
@@ -322,8 +323,8 @@ const Page = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-              Why Choose <span className="text-blue-400">British AUC</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Why Choose <span className="text-blue-400">British AUC University Pathway?</span>
             </h2>
           </motion.div>
 
@@ -399,6 +400,9 @@ const Page = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Footer */}
+      <Footer />
     </div>
   )
 }
