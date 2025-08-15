@@ -67,7 +67,7 @@ With a history spanning over 250 years, the United States is home to a dynamic p
             <div>
                 <p className='uppercase font-extrabold text-[28px] mt-16 mb-8'>COST OF LIVING IN THE USA FOR NIGERIAN STUDENTS</p>
                 <p className='text-[17px] mt-8'>
-                Exploring academic horizons and experiencing life in the United States offers remarkable opportunities, but it's important to consider the costs. The USA is known for offering world-class education; however, this quality often comes with a price tag. The cost of obtaining a degree in the USA can vary significantly, ranging from approximately 10,000 USD to 40,000 USD per year. These costs depend on several factors, including the specific course of study and the institution you choose to attend. It's worth noting that certain prestigious universities and specialized programs may have higher tuition fees.
+                Exploring academic horizons and experiencing life in the United States offers remarkable opportunities, but it's important to consider the costs. The USA is known for offering world-class education; however, this quality often comes with a price tag. The cost of obtaining a degree in the USA can vary significantly, ranging from approximately 10,000 USD to 40,000 USD per year. These costs depend on several factors, including the specific course of study and the institution you choose to attend. It's worth noting that certain prestigious universities and specialized programmes may have higher tuition fees.
                 <br /><br />
 In addition to tuition, you'll need to budget for accommodation and living expenses. The United States is a vast country with varying living costs depending on the location. On average, accommodation and living costs range from about 10,000 USD to 32,000 USD annually. Major cities like New York or Los Angeles tend to be more expensive, while smaller towns and rural areas may offer more affordable living options.
 <br /><br />
@@ -146,11 +146,11 @@ Please note that these figures are approximate and can change over time and with
                 <p className='text-[17px] mt-8'>
                 As a Nigerian student, you'll need to secure a study visa (F1 visa) to pursue your education in the United States. This process involves completing specific forms, presenting essential documents, and attending a visa interview. It can be quite challenging, but fortunately, British American AUC is here to guide you through every step.
                 <br /><br />
-Both undergraduate and graduate programs are available, with undergraduate programs typically lasting four years. However, professional courses like medicine and law follow a 4+4 model. This means you'll complete a related course over four years and then proceed to four years of specialized professional training. There's one exceptional case: at The American University of Barbados School of Medicine, you can achieve your medical degree in just 5 ½ years.
+Both undergraduate and graduate programmes are available, with undergraduate programmes typically lasting four years. However, professional courses like medicine and law follow a 4+4 model. This means you'll complete a related course over four years and then proceed to four years of specialized professional training. There's one exceptional case: at The American University of Barbados School of Medicine, you can achieve your medical degree in just 5 ½ years.
 <br /><br />
-For graduate programs, a direct entry of two years is an option, but this is currently limited to students with first-class or second-class upper qualifications. Unfortunately, there's no legal pathway for students whose academic results do not meet these requirements to study in the USA.
+For graduate programmes, a direct entry of two years is an option, but this is currently limited to students with first-class or second-class upper qualifications. Unfortunately, there's no legal pathway for students whose academic results do not meet these requirements to study in the USA.
 <br /><br />
-Please note that the specifics of visa and program requirements can change, so it's essential to consult with British AUC for the most up-to-date and accurate guidance.
+Please note that the specifics of visa and programme requirements can change, so it's essential to consult with British AUC for the most up-to-date and accurate guidance.
 
 
 

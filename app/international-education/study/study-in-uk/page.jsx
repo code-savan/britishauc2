@@ -67,7 +67,7 @@ const page = () => {
                 <br /><br />
     It's important to note that the cost of living and accommodation also depends on the specific city you choose. While the UK, in general, provides relatively affordable living expenses, keep in mind that residing in London tends to be slightly pricier than other UK cities. On average, you can anticipate living costs ranging from ₦4.5 million to ₦6.1 million annually.
     <br /><br />
-    In addition to tuition and living expenses, consider other factors such as transportation, books, and personal expenditures when planning your budget. Furthermore, many universities offer scholarships and financial aid programs, which can significantly offset the overall cost of your education.
+    In addition to tuition and living expenses, consider other factors such as transportation, books, and personal expenditures when planning your budget. Furthermore, many universities offer scholarships and financial aid programmes, which can significantly offset the overall cost of your education.
                 </p>
             </div>
             <button className='uppercase text-white py-3 px-3 mt-4 bg-[#017fff] rounded-sm font-semibold'>

@@ -86,9 +86,9 @@ In summary, Canada's natural wonders, cuisine, cities, wildlife, and warm people
             <div>
                 <p className='uppercase font-extrabold text-[28px] mt-16 mb-8 '>ADMISSION PROCESSING REQUIREMENTS FOR NIGERIAN STUDENTS</p>
                 <p className='text-[17px] mt-16 mb-8 '>
-                Canada offers streamlined pathways for both undergraduate and graduate programs. Undergraduate programs typically span four years, with exceptions for professional courses like medicine and law, which adopt a 4+4 structure. In these cases, students first complete a related course over four years before advancing to a four-year program in their chosen profession.
+                Canada offers streamlined pathways for both undergraduate and graduate programmes. Undergraduate programmes typically span four years, with exceptions for professional courses like medicine and law, which adopt a 4+4 structure. In these cases, students first complete a related course over four years before advancing to a four-year programme in their chosen profession.
 <br /><br />
-For graduate programs, a direct entry of two years is available, but it's exclusively accessible to students who have earned either a first-class or second-class upper distinction. Unfortunately, there is currently no viable avenue for students whose academic achievements do not meet these specific criteria to pursue studies in Canada. This ensures that the academic standards and quality of education are rigorously upheld.
+For graduate programmes, a direct entry of two years is available, but it's exclusively accessible to students who have earned either a first-class or second-class upper distinction. Unfortunately, there is currently no viable avenue for students whose academic achievements do not meet these specific criteria to pursue studies in Canada. This ensures that the academic standards and quality of education are rigorously upheld.
                 </p>
 
                 <p className='text-[17px] mt-8 text-gray-600 font-bold'>

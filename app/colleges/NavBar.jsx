@@ -10,9 +10,9 @@ const navLinks = [
   { href: "/colleges", label: "Home" },
   { href: "/colleges/about", label: "About Us" },
   { href: "/colleges/admissions", label: "Admissions" },
-  { href: "/colleges/programs", label: "Programs" },
+  { href: "/colleges/programmes", label: "Programmes" },
   { href: "/colleges/college-life", label: "College Life" },
-  { href: "/colleges/apply", label: "Apply" },
+//   { href: "/colleges/apply", label: "Apply" },
 ]
 
 const NavBar = () => {
@@ -34,7 +34,7 @@ const NavBar = () => {
               alt="British AUC Colleges"
               width={160}
               height={160}
-              className="h-20 w-auto"
+              className="h-12 w-auto"
               priority
             />
           </Link>

@@ -331,7 +331,7 @@ export const whyStudyInTheUK = [
     {
         key: 6,
         title: "Shorter Degrees",
-        content: "Studying in the UK typically results in shorter program durations. While other destinations might take 4 years plus 2 to 3 years for a postgraduate degree, the UK allows you to obtain the same postgraduate degree in just 3 years plus an additional 1 year."
+        content: "Studying in the UK typically results in shorter programme durations. While other destinations might take 4 years plus 2 to 3 years for a postgraduate degree, the UK allows you to obtain the same postgraduate degree in just 3 years plus an additional 1 year."
     },
     {
         key: 7,

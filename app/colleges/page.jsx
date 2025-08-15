@@ -60,6 +60,34 @@ const features = [
   }
 ]
 
+const whyChooseFeatures = [
+  {
+    title: "Tailored Learning Experience",
+    description: "Our courses are designed to meet the specific needs of students transitioning to university. We focus on academic excellence while developing key skills in critical thinking, research, and communication.",
+    icon: BookOpen
+  },
+  {
+    title: "Guaranteed University Progression",
+    description: "Successful completion of the pathway guarantees progression to partner universities, including some of the prestigious institutions worldwide.",
+    icon: GraduationCap
+  },
+  {
+    title: "Expert Faculty and Personalized Support",
+    description: "Our team of highly qualified educators and academic advisors provides personalized support throughout your journey ensuring you are well-prepared for university life.",
+    icon: Users
+  },
+  {
+    title: "English Language Support",
+    description: "We offer specialized English language programmes to help students meet university language proficiency standards.",
+    icon: Globe
+  },
+  {
+    title: "State-of-the-Art Facilities",
+    description: "Study in a modern, well equipped environment that supports both academic and extracurricular activities.",
+    icon: School
+  }
+]
+
 const Page = () => {
   const [activeProgramme, setActiveProgramme] = useState(0)
 
@@ -143,7 +171,7 @@ const Page = () => {
         </div>
       </section>
 
-      {/* Programs Section */}
+      {/* Programmes Section */}
       <section id="programmes" className="relative py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
@@ -309,14 +337,14 @@ const Page = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="relative py-20 overflow-hidden flex flex-col items-center justify-center h-screen">
+      <section className="relative py-20 overflow-hidden flex flex-col items-center justify-center ">
         <div className="absolute inset-0 bg-black " />
         <div className="absolute inset-0">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[120%] h-40 bg-[#0A0F1C] blur-3xl" />
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[120%] h-40 bg-[#0A0F1C] blur-3xl" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6">
+        <div className="relative max-w-7xl mx-auto ">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -324,29 +352,31 @@ const Page = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Why Choose <span className="text-blue-400">British AUC University Pathway?</span>
+              Why Choose <span className="text-red-400 block">British AUC University Pathway?</span>
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
+          <div className=" md:flex md:flex-wrap gap-8 justify-center">
+            {whyChooseFeatures.map((feature, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-8 transition-all duration-300"
+                className="group bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-6 transition-all duration-300" style={{ width: "calc(33.3333% - 30px)" }}
               >
                 <div className="relative w-12 h-12 mb-6">
                   <div className="absolute inset-0 bg-blue-500/20 rounded-xl transform -rotate-6 group-hover:rotate-3 transition-transform" />
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center">
                     <feature.icon className="w-6 h-6 text-white" />
                   </div>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">{feature.title}</h3>
-                <p className="text-gray-400 mb-4">{feature.description}</p>
-                <div className="text-2xl font-bold text-blue-400">{feature.stats}</div>
+                <h3 className="text-[18px] font-bold text-white mb-1">{feature.title}</h3>
+                <p className="text-gray-400 mb-4 text-[14px]">{feature.description}</p>
+                {feature.stats && (
+                  <div className="text-2xl font-bold text-red-400">{feature.stats}</div>
+                )}
               </motion.div>
             ))}
           </div>
@@ -369,7 +399,7 @@ const Page = () => {
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-700/50 to-blue-600/50 backdrop-blur-sm" />
+              <div className="absolute inset-0 bg-gradient-to-r from-red-700/50 to-red-600/50 backdrop-blur-sm" />
             </div>
 
             <div className="relative py-10 px-6 md:p-16">
@@ -378,7 +408,7 @@ const Page = () => {
                   Ready to Start Your International Education Journey?
                 </h2>
                 <p className="text-white/80 text-lg mb-8">
-                  Contact us today to learn more about our programs and how we can help you achieve your academic goals.
+                  Contact us today to learn more about our programmes and how we can help you achieve your academic goals.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Link
@@ -389,7 +419,7 @@ const Page = () => {
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
-                    href="#programs"
+                    href="#programmes"
                     className="inline-flex items-center gap-2 bg-white/20 text-white px-8 py-3 rounded-xl font-medium hover:bg-white/30 transition-colors"
                   >
                     Learn More

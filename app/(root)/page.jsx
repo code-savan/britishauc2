@@ -15,7 +15,7 @@ const academies = [
   },
   {
     title: "London Football Academy",
-    description: "Premier football development program in London for students combining education with elite football training.",
+    description: "Premier football development programme in London for students combining education with elite football training.",
     image: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=1000",
     link: "https://sports.britishauc.com/academy/london"
   },
@@ -76,7 +76,7 @@ export default function Home() {
       bgImage: "https://images.unsplash.com/photo-1628654294459-95e732c1385a?q=80&w=2940",
       programType: "Seasonal",
       author: "Learn More",
-      features: ["Summer Programs", "Winter Camps", "Leadership"]
+      features: ["Summer Programmes", "Winter Camps", "Leadership"]
     },
     {
       title: "British AUC University Pathway",
@@ -139,7 +139,7 @@ export default function Home() {
               Pathways to Global Success
             </h1>
             <p className="text-lg text-white/90 mb-5 leading-relaxed font-medium">
-              Transform your future through our comprehensive programs in international education,
+              Transform your future through our comprehensive programmes in international education,
               sports development, immersive camps, and college preparation.
             </p>
             <motion.div
@@ -172,7 +172,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Right Side - Featured Programs */}
+        {/* Right Side - Featured Programmes */}
         <div className="w-full md:w-1/2 mt-12 md:mt-0">
           <motion.div
             variants={container}
@@ -472,7 +472,7 @@ export default function Home() {
                   British AUC <span className='text-red-500'>SPORT</span>
                 </h2>
                 <p className="text-lg w-full md:text-xl text-gray-200 md:text-gray-300 leading-relaxed">
-                  Connecting talented athletes with exceptional opportunities through professional trials, academy experiences, and elite training programs.
+                  Connecting talented athletes with exceptional opportunities through professional trials, academy experiences, and elite training programmes.
                 </p>
               </div>
 
@@ -481,7 +481,7 @@ export default function Home() {
                   href="https://sports.britishauc.com"
                   className="inline-flex items-center gap-2 bg-red-600 text-white px-8 py-3 rounded-full font-medium hover:bg-red-700 transition-colors"
                 >
-                  Explore Programs
+                  Explore Programmes
                   <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
                     <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>

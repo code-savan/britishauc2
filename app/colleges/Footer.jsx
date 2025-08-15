@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"
 
 import React from 'react'
@@ -11,21 +12,21 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Logo and About */}
-          <div className="space-y-4">
+          <div className="space-y-2">
             <Link href="/colleges" className="inline-block">
               <Image
                 src="/collegeslogo.png"
                 alt="British AUC Colleges"
                 width={140}
                 height={140}
-                className="h-20 w-auto"
+                className="h-12 w-auto "
               />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed">
               Your pathway to prestigious university undergraduate degrees. We help you prepare for entry into leading universities worldwide.
             </p>
             {/* Social Links */}
-            <div className="flex space-x-3 pt-4">
+            {/* <div className="flex space-x-3 pt-4">
               <Link
                 href="https://facebook.com"
                 target="_blank"
@@ -54,7 +55,7 @@ const Footer = () => {
               >
                 <Linkedin size={20} />
               </Link>
-            </div>
+            </div> */}
           </div>
 
           {/* Quick Links */}
@@ -67,8 +68,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/colleges/programs" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  Our Programs
+                <Link href="/colleges/programmes" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  Our Programmes
                 </Link>
               </li>
               <li>
@@ -89,27 +90,27 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Programs */}
+          {/* Programmes */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Our Programs</h3>
+            <h3 className="text-lg font-semibold mb-4">Our Programmes</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/colleges/programs#a-level" className="text-gray-400 hover:text-white transition-colors text-sm">
+                <Link href="/colleges/programmes#a-level" className="text-gray-400 hover:text-white transition-colors text-sm">
                   A-Level Program
                 </Link>
               </li>
               <li>
-                <Link href="/colleges/programs#foundation" className="text-gray-400 hover:text-white transition-colors text-sm">
+                <Link href="/colleges/programmes#foundation" className="text-gray-400 hover:text-white transition-colors text-sm">
                   International Foundation Year
                 </Link>
               </li>
               <li>
-                <Link href="/colleges/programs#year-one" className="text-gray-400 hover:text-white transition-colors text-sm">
+                <Link href="/colleges/programmes#year-one" className="text-gray-400 hover:text-white transition-colors text-sm">
                   International Year One & Two
                 </Link>
               </li>
               <li>
-                <Link href="/colleges/programs#selt" className="text-gray-400 hover:text-white transition-colors text-sm">
+                <Link href="/colleges/programmes#selt" className="text-gray-400 hover:text-white transition-colors text-sm">
                   SELT Preparation
                 </Link>
               </li>
@@ -123,25 +124,25 @@ const Footer = () => {
               <li className="flex items-start space-x-3">
                 <MapPin size={20} className="text-blue-400 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-gray-400 text-sm">128 City Road, London, United Kingdom</p>
+                  <p className="text-gray-400 text-sm">Kingfem GA247, Plot 264 Ahmadu Bello Way, Abuja-FCT, Nigeria</p>
                 </div>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone size={20} className="text-blue-400 flex-shrink-0" />
-                <a href="tel:+44-20-1234-5678" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  +44 20 1234 5678
+                <a href="tel:+2348059000097" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  +2348059000097
                 </a>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail size={20} className="text-blue-400 flex-shrink-0" />
                 <a href="mailto:info@britishauc.edu" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  info@britishauc.edu
+                admin@britishauc.com
                 </a>
               </li>
             </ul>
 
             {/* Newsletter */}
-            <div className="mt-6">
+            {/* <div className="mt-6">
               <h4 className="text-sm font-semibold mb-3">Subscribe to Newsletter</h4>
               <form className="flex space-x-2">
                 <input
@@ -156,17 +157,17 @@ const Footer = () => {
                   Subscribe
                 </button>
               </form>
-            </div>
+            </div> */}
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0">
             <p className="text-gray-400 text-sm">
               © 2024 British AUC University Pathway. All rights reserved.
             </p>
-            <div className="flex space-x-6">
+            {/* <div className="flex space-x-6">
               <Link href="/privacy-policy" className="text-gray-400 hover:text-white transition-colors text-sm">
                 Privacy Policy
               </Link>
@@ -176,7 +177,7 @@ const Footer = () => {
               <Link href="/cookies" className="text-gray-400 hover:text-white transition-colors text-sm">
                 Cookie Policy
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

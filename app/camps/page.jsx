@@ -34,13 +34,13 @@ const Page = () => {
         </h1>
         <p className="text-lg text-white/80 mb-8 leading-relaxed">
           We&apos;re crafting an exceptional camps experience that will transform your educational journey.
-          Our program will offer immersive summer and winter camps focused on leadership, cultural exchange, and personal growth.
+          Our programme will offer immersive summer and winter camps focused on leadership, cultural exchange, and personal growth.
         </p>
         <div className="flex flex-col items-center gap-6">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 w-full max-w-md mx-auto">
             {[
-              { text: 'College Programs', href: '/colleges' },
-              { text: 'Sports Programs', href: 'https://sports.britishauc.com' },
+              { text: 'College Programmes', href: '/colleges' },
+              { text: 'Sports Programmes', href: 'https://sports.britishauc.com' },
               { text: 'International Education', href: '/international-education' }
             ].map((item, index) => (
               <Link
@@ -56,7 +56,7 @@ const Page = () => {
             href="/"
             className="px-8 py-3 rounded-full bg-white text-slate-900 font-semibold hover:bg-white/90 transition-colors inline-flex items-center gap-2"
           >
-            Explore Other Programs
+            Explore Other Programmes
             <ArrowLeft className="w-4 h-4 rotate-180" />
           </Link>
         </div>
