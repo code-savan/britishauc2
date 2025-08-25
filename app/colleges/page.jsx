@@ -14,28 +14,28 @@ const programmes = [
     description: "Internationally recognized qualification opening doors to top-tier universities worldwide.",
     icon: GraduationCap,
     features: ["Expert teachers", "Robust curriculum", "Global recognition"],
-    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=3540&auto=format&fit=crop"
+    image: "/1.jpg"
   },
   {
     title: "International Foundation Year",
     description: "Bridge the gap between secondary education and university-level study with specialized pathways.",
     icon: BookOpen,
     features: ["Business pathway", "Engineering pathway", "Law pathway"],
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2940"
+    image: "/3.jpg"
   },
   {
     title: "International Year One & Two",
     description: "Earn university credits while completing the equivalent of the first and second years of a degree programme.",
     icon: School,
     features: ["Direct university pathway", "Credit transfer", "Smooth transition"],
-    image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=2940"
+    image: "/5.jpg"
   },
   {
     title: "SELT Preparation",
     description: "Comprehensive preparation for Secure English Language Tests including PTE, IELTS, TOEFL, and more.",
     icon: Globe,
     features: ["Language proficiency", "Test strategies", "Practice tests"],
-    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2940"
+    image: "/7.jpg"
   }
 ]
 
@@ -157,10 +157,10 @@ const Page = () => {
                 className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-gray-200 group cursor-pointer shadow-lg"
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=3540"
+                  src="/hero.png"
                   alt="Education"
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500 object-left"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               </motion.div>
@@ -238,7 +238,7 @@ const Page = () => {
                     src={programmes[activeProgramme].image}
                     alt={programmes[activeProgramme].title}
                     fill
-                    className="object-cover"
+                    className="object-cover object-center"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
                   <div className="absolute inset-0 p-8 flex flex-col justify-end">
@@ -394,10 +394,10 @@ const Page = () => {
           >
             <div className="absolute inset-0">
               <Image
-                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=3540"
+                src="/hero.png"
                 alt="Education"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-red-700/50 to-red-600/50 backdrop-blur-sm" />
             </div>

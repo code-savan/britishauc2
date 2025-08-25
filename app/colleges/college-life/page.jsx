@@ -13,49 +13,49 @@ const sections = [
     icon: Users,
     title: "A Supportive Community",
     desc: "A welcoming, diverse student body and staff dedicated to creating an inclusive and supportive environment.",
-    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2940",
+    image: "/1.jpg",
     features: ["Diverse student body", "Mentorship programmes", "Peer support groups", "International community"]
   },
   {
     icon: Star,
     title: "Clubs and Societies",
     desc: "Join a range of clubs and societies, from academic to hobby-based, including music and sports.",
-    image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=2949",
+    image: "/3.jpg",
     features: ["20+ active clubs", "Student-led initiatives", "Cultural societies", "Academic clubs"]
   },
   {
     icon: Activity,
     title: "Campus Events and Activities",
     desc: "Enjoy regular events, guest lectures, workshops, and social mixers to enhance your college experience.",
-    image: "https://images.unsplash.com/photo-1540317580384-e5d43616b9aa?q=80&w=2787",
+    image: "/5.jpg",
     features: ["Weekly events", "Guest speakers", "Workshops", "Social gatherings"]
   },
   {
     icon: Heart,
     title: "Sport and Fitness",
     desc: "Maintain a healthy lifestyle with a variety of sports facilities and fitness programmes.",
-    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2940",
+    image: "/9.jpg",
     features: ["Modern gym", "Sports teams", "Fitness classes", "Outdoor activities"]
   },
   {
     icon: Home,
     title: "Accommodation",
     desc: "Modern and comfortable accommodation options to suit students' needs.",
-    image: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=2938",
+    image: "/7.jpg",
     features: ["On-campus housing", "24/7 security", "Study spaces", "Common areas"]
   },
   {
     icon: Briefcase,
     title: "Career Development",
     desc: "Explore career options, prepare for the job market, and find internships aligned with your academic interests.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2787",
+    image: "/2.jpg",
     features: ["Career counseling", "CV workshops", "Job fairs", "Internship placements"]
   },
   {
     icon: Smile,
     title: "Student Well-being",
     desc: "Access counseling, mental health support, and wellness programmes to thrive academically and professionally.",
-    image: "https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=2940",
+    image: "/4.jpg",
     features: ["Counseling services", "Mental health support", "Wellness programmes", "Health clinic"]
   }
 ]
@@ -186,12 +186,12 @@ const CollegeLife = () => {
                   transition={{ duration: 0.3 }}
                 >
                   {/* Feature Image */}
-                  <div className="relative h-96 rounded-2xl overflow-hidden mb-8 shadow-xl">
+                  <div className="relative h-[550px] rounded-2xl overflow-hidden mb-8 shadow-xl">
                     <Image
                       src={activeData.image}
                       alt={activeData.title}
                       fill
-                      className="object-cover"
+                      className="object-cover object-center"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                     <div className="absolute bottom-0 left-0 p-8">
