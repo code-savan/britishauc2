@@ -35,7 +35,7 @@ const programmes = [
     description: "Comprehensive preparation for Secure English Language Tests including PTE, IELTS, TOEFL, and more.",
     icon: Globe,
     features: ["Language proficiency", "Test strategies", "Practice tests"],
-    image: "/7.jpg"
+    image: "/9.jpg"
   }
 ]
 
@@ -238,7 +238,7 @@ const Page = () => {
                     src={programmes[activeProgramme].image}
                     alt={programmes[activeProgramme].title}
                     fill
-                    className="object-cover object-center"
+                    className="object-cover object-top"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
                   <div className="absolute inset-0 p-8 flex flex-col justify-end">
@@ -413,7 +413,7 @@ const Page = () => {
                 <div className="flex flex-wrap gap-4">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 bg-white text-blue-600 px-8 py-3 rounded-xl font-medium hover:bg-white/90 transition-colors"
+                    className="inline-flex items-center gap-2 bg-white text-red-600 px-8 py-3 rounded-xl font-medium hover:bg-white/90 transition-colors"
                   >
                     Get Started
                     <ArrowRight className="w-4 h-4" />
