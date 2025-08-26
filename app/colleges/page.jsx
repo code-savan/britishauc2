@@ -92,7 +92,7 @@ const Page = () => {
   const [activeProgramme, setActiveProgramme] = useState(0)
 
   return (
-    <div className="min-h-screen w-full bg-white">
+    <div className="min-h-screen w-full bg-white">2
       <NavBar />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center bg-gray-50 border pt-10">

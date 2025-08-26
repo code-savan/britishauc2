@@ -62,7 +62,7 @@ export default function Home() {
       description: "Elite football/sports development programmes and connections to UK, European football/sport clubs and academies.",
       stats: "50+ Partners",
       icon: "/ball.png",
-      bgImage: "https://images.unsplash.com/photo-1650409590770-79bad78b5a16?q=80&w=2940",
+      bgImage: "/sportshero.jpg",
       programType: "Full-time",
       author: "Learn More",
       features: ["Sports Scholarships", "Training Camps", "Pro Trials"]
@@ -73,7 +73,7 @@ export default function Home() {
       description: "Immersive learning experiences through summer and winter camps worldwide.",
       stats: "30+ Locations",
       icon: "/w4.svg",
-      bgImage: "https://images.unsplash.com/photo-1628654294459-95e732c1385a?q=80&w=2940",
+      bgImage: "/campshero.jpg",
       programType: "Seasonal",
       author: "Learn More",
       features: ["Summer Programmes", "Winter Camps", "Leadership"]
@@ -84,7 +84,7 @@ export default function Home() {
       description: "Comprehensive university pathway to Oxbridge and Ivy-league universities",
       stats: "100+ Partners",
       icon: "/p3.svg",
-      bgImage: "https://images.unsplash.com/photo-1741638511412-d1657179c505?q=80&w=3087",
+      bgImage: "/hero.png",
       programType: "Full-time",
       author: "Learn More",
       features: ["College Prep", "Career Guidance", "Admissions"]
@@ -567,7 +567,7 @@ export default function Home() {
           >
             <div className="flex items-center gap-4 mb-8">
               <h2 className="text-3xl font-bold text-white">
-                Upcoming Events
+                 Events
               </h2>
               <span className="px-3 py-1 bg-blue-500 text-white text-sm rounded-full">
                 2025
