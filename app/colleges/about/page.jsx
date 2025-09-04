@@ -113,7 +113,7 @@ const About = () => {
             >
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/8.jpg"
+                  src="/hero.png"
                   alt="Students studying"
                   fill
                   className="object-cover"

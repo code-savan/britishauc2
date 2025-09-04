@@ -154,13 +154,13 @@ const Page = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.3 }}
-                className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-gray-200 group cursor-pointer shadow-lg"
+                className="relative aspect-[3/3] rounded-2xl overflow-hidden border border-gray-200 group cursor-pointer shadow-lg"
               >
                 <Image
-                  src="/hero.png"
+                  src="/hero.jpg"
                   alt="Education"
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500 object-left"
+                  className="object-top object-cover group-hover:scale-105 transition-transform duration-500 "
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               </motion.div>
