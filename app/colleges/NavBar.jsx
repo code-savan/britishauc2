@@ -12,6 +12,7 @@ const navLinks = [
   { href: "/colleges/admissions", label: "Admissions" },
   { href: "/colleges/programmes", label: "Programmes" },
   { href: "/colleges/college-life", label: "College Life" },
+  { href: "/colleges/fees-and-accommodation", label: "Fees & Accommodation" },
 //   { href: "/colleges/apply", label: "Apply" },
 ]
 

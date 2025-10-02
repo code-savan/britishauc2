@@ -83,6 +83,11 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link href="/colleges/fees-and-accommodation" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  Fees & Accommodation
+                </Link>
+              </li>
+              <li>
                 <Link href="/colleges/apply" className="text-gray-400 hover:text-white transition-colors text-sm">
                   Apply Now
                 </Link>
