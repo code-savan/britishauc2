@@ -27,6 +27,11 @@ const academies = [
   }
 ]
 
+// Small memo for loading strategies
+// - Images: Use loading="lazy" where possible, except for fold images or critical images (keep priority when needed)
+// - Videos: Use loading="lazy", add poster, play only on visible
+// - Only keep priority on above-the-fold hero images, ideally just 1 per section, remove in banner/slider cards etc.
+
 export default function Home() {
   const [currentAcademy, setCurrentAcademy] = useState(0)
 
@@ -38,16 +43,21 @@ export default function Home() {
   }, [])
 
   const scrollToSection = () => {
-    document.getElementById('international-section').scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    })
+    if (typeof window !== 'undefined') {
+      const el = document.getElementById('international-section')
+      if (el) {
+        el.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        })
+      }
+    }
   }
 
   const categories = [
     {
       title: "International Education",
-      href: "/international-education",
+      href: "https://www.international-education.britishauc.com/",
       description: "Study in top universities worldwide. We've helped over 100 Nigerian students gain admission in 25+ countries.",
       stats: "100+ Students",
       icon: "/study1.svg",
@@ -80,7 +90,7 @@ export default function Home() {
     },
     {
       title: "British AUC University Pathway",
-      href: "/colleges",
+      href: "https://www.britishaucunipathway.com/",
       description: "Comprehensive university pathway to Oxbridge and Ivy-league universities",
       stats: "100+ Partners",
       icon: "/p3.svg",
@@ -110,15 +120,17 @@ export default function Home() {
     <main className="relative w-full overflow-x-hidden">
       {/* Video Background */}
       <div className="fixed inset-0 w-full h-full">
+        {/* Video: use preload="metadata", add poster, add loading and defer playing until visible if possible */}
         <video
           autoPlay
           muted
           loop
           playsInline
-          defaultMuted
           webkit-playsinline="true"
           className="absolute inset-0 w-full h-full object-cover"
-          preload="auto"
+          preload="metadata"
+          poster="/poster.png"
+          id="herovideo"
         >
           <source src="/herobg.mp4" type="video/mp4" />
         </video>
@@ -198,6 +210,9 @@ export default function Home() {
                         alt={category.title}
                         fill
                         className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                        loading="lazy"
+                        // priority={index === 0} // Only the first card above-the-fold is priority
+                        sizes="(max-width: 768px) 100vw, 50vw"
                       />
                       {/* Multiple overlay layers for better contrast */}
                       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/20" />
@@ -219,13 +234,6 @@ export default function Home() {
                               {category.programType}
                             </span>
                           </div>
-                            {/* <Image
-                                src="/logoicon.png"
-                                alt={category.author}
-                                width={20}
-                                height={20}
-                                className="w-[30px]"
-                              /> */}
                         </div>
                         <p className="text-sm text-white/80 line-clamp-4 font-semibold drop-shadow-sm mt-2">
                           {category.description}
@@ -236,15 +244,6 @@ export default function Home() {
                       <div className="mt-auto py-2 border-t border-white/20 bg-white/90 text-black rounded-[15px] p-2">
                         <div className="flex items-center justify-between ">
                           <div className="flex items-center gap-3 pl-2">
-                            {/* <div className="w-8 h-8  flex items-center justify-center border border-white/10">
-                              <Image
-                                src="/logo.png"
-                                alt={category.author}
-                                width={20}
-                                height={20}
-                                className="w-full h-full object-contain"
-                              />
-                            </div> */}
                             <div className="flex flex-col">
                               <span className=" text-sm font-bold text-black/80 drop-shadow-sm">
                                 {category.author}
@@ -288,7 +287,9 @@ export default function Home() {
             alt="International Education"
             fill
             className="object-cover object-center"
-            priority
+            // Only use priority for above-the-fold hero image, others lazy
+            loading="lazy"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/90 to-purple-950/20" />
         </div>
@@ -333,6 +334,7 @@ export default function Home() {
                 <Link
                   href="/international-education"
                   className="inline-flex items-center gap-2 bg-[#017fff] text-white px-8 py-3 rounded-full font-medium hover:bg-[#0165cc] transition-colors"
+                  prefetch={false}
                 >
                   Explore Program
                   <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
@@ -349,6 +351,7 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
               className="relative bg-white rounded-3xl p-6 md:p-8 shadow-xl"
+              tabIndex={0}
             >
               <div className="space-y-6">
                 <div className="flex flex-wrap gap-2">
@@ -427,7 +430,9 @@ export default function Home() {
                       src={card.image}
                       alt={card.title}
                       fill
+                      loading="lazy"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 100vw, 30vw"
                     />
                     <div className="absolute inset-0 bg-black/20" />
                     <div className="py-2 px-4 absolute bg-white backdrop-blur-sm rounded-[15px] w-[95%] left-[50%] -translate-x-[50%] bottom-2 shadow-lg">
@@ -451,7 +456,9 @@ export default function Home() {
             alt="Football Academy"
             fill
             className="object-cover object-center"
-            priority
+            loading="eager" // This is likely above the fold for Sports
+            priority={false}
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/90 to-black/50" />
         </div>
@@ -480,6 +487,7 @@ export default function Home() {
                 <Link
                   href="https://sports.britishauc.com"
                   className="inline-flex items-center gap-2 bg-red-600 text-white px-8 py-3 rounded-full font-medium hover:bg-red-700 transition-colors"
+                  prefetch={false}
                 >
                   Explore Programmes
                   <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
@@ -503,20 +511,23 @@ export default function Home() {
                     key={currentAcademy}
                     initial={{ opacity: 0, x: 0 }}
                     animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 40, x: 0 }}
+                    exit={{ opacity: 0, x: 0 }}
                     transition={{ duration: 0.5 }}
                     className="absolute inset-0"
                   >
                     <Link
                       href={academies[currentAcademy].link}
                       className="group relative h-full w-full overflow-hidden rounded-2xl shadow-xl"
+                      prefetch={false}
                     >
                       <div className="overflow-hidden backdrop-blur-xl bg-black/50 absolute inset-0 right-0 left-0 w-full h-full bottom-0 rounded-2xl">
                         <Image
                           src={academies[currentAcademy].image}
                           alt={academies[currentAcademy].title}
                           fill
+                          loading="lazy"
                           className="object-cover w-full rounded-2xl h-full group-hover:scale-105 transition-transform duration-500"
+                          sizes="(max-width: 768px) 100vw, 50vw"
                         />
                         <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/70" />
                       </div>
@@ -550,6 +561,7 @@ export default function Home() {
                           : 'bg-gray-50/40 hover:bg-gray-50/60'
                       }`}
                       aria-label={`Go to slide ${index + 1}`}
+                      tabIndex={0}
                     />
                   ))}
                 </div>
@@ -595,6 +607,7 @@ export default function Home() {
                   href={event.link}
                   key={index}
                   className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-colors"
+                  prefetch={false}
                 >
                   <div className="flex items-start justify-between">
                     <div>
