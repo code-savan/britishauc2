@@ -17,6 +17,102 @@ import { useState, useEffect, useRef } from 'react'
  * - Animations are only applied to below-the-fold content after allowHeavy is enabled.
  */
 
+// Skeleton UI components
+const Skeleton = ({ className = "" }) => (
+  <div className={`animate-pulse bg-gray-300/30 dark:bg-gray-600/30 ${className}`} />
+);
+
+const SkeletonCard = () => (
+  <div className="rounded-2xl overflow-hidden shadow-md group h-[280px] bg-white/40 relative">
+    <Skeleton className="absolute inset-0 rounded-2xl w-full h-full" />
+    <div className="relative h-full p-4 flex flex-col">
+      <div className="flex flex-col mb-auto gap-1">
+        <Skeleton className="h-6 w-2/3 mb-2 rounded" />
+        <Skeleton className="h-4 w-full mb-2 rounded" />
+        <Skeleton className="h-4 w-3/4 mb-2 rounded" />
+      </div>
+      <div className="mt-auto py-2 rounded-[15px] p-2 flex flex-col gap-2">
+        <Skeleton className="h-4 w-1/2 rounded" />
+        <Skeleton className="h-3 w-1/4 rounded" />
+      </div>
+    </div>
+  </div>
+);
+
+const SkeletonStats = () => (
+  <div className="grid grid-cols-2 gap-4">
+    {[1, 2, 3, 4].map((i) => (
+      <div key={i} className="space-y-1">
+        <Skeleton className="h-7 w-1/2 rounded" />
+        <Skeleton className="h-4 w-2/3 rounded" />
+      </div>
+    ))}
+  </div>
+);
+
+const SkeletonFeatureBox = () => (
+  <div className="relative bg-white rounded-3xl p-6 md:p-8 shadow-xl">
+    <div className="space-y-6">
+      <div className="flex flex-wrap gap-2">
+        {Array(6)
+          .fill(0)
+          .map((_, i) => (
+            <Skeleton key={i} className="w-24 h-6 rounded-full" />
+          ))}
+      </div>
+      <div className="space-y-4">
+        <Skeleton className="h-6 w-1/4 rounded" />
+        <div className="space-y-2">
+          {Array(6)
+            .fill(0)
+            .map((_, i) => (
+              <Skeleton key={i} className="h-4 w-full rounded" />
+            ))}
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+const SkeletonHelpCard = () => (
+  <div className="group bg-white/10 backdrop-blur-sm cursor-pointer rounded-2xl border-4 border-gray-50 overflow-hidden shadow-xl">
+    <div className="relative h-[230px] overflow-hidden flex flex-col justify-end">
+      <Skeleton className="absolute inset-0 w-full h-full" />
+      <div className="py-2 px-4 absolute bg-white backdrop-blur-sm rounded-[15px] w-[95%] left-[50%] -translate-x-[50%] bottom-2 shadow-lg">
+        <Skeleton className="h-5 w-2/3 rounded mb-1" />
+        <Skeleton className="h-3 w-full rounded mb-1" />
+      </div>
+    </div>
+  </div>
+);
+
+const SkeletonAcademySlider = () => (
+  <div className="relative aspect-[16/10] w-full h-[300px] md:h-auto">
+    <Skeleton className="absolute inset-0 w-full h-full rounded-2xl" />
+    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex py-2 w-[96%] items-center justify-center gap-2 backdrop-blur-3xl bg-black/60 rounded-b-2xl">
+      {[0, 1, 2].map((_, i) => (
+        <span key={i} className="w-2 h-2 rounded-full bg-gray-50/30" />
+      ))}
+    </div>
+  </div>
+);
+
+const SkeletonEventCard = () => (
+  <div className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-colors">
+    <div className="flex items-start justify-between gap-4">
+      <div>
+        <Skeleton className="h-6 w-32 rounded mb-2" />
+        <Skeleton className="h-4 w-24 rounded" />
+      </div>
+      <Skeleton className="h-[30px] w-[120px] rounded-full" />
+    </div>
+    <div className="mt-6 flex items-center gap-2 text-white/80 text-sm group-hover:text-white transition-colors">
+      <Skeleton className="h-4 w-16 rounded" />
+      <Skeleton className="h-4 w-4 rounded" />
+    </div>
+  </div>
+);
+
 const academies = [
   {
     title: "Manchester Football Academy",
@@ -151,7 +247,7 @@ export default function Home() {
           style={{ zIndex: 0 }}
         />
         {/* Only load video after hydration. If needed, even further defer until hero is in view. */}
-        {showVideo && (
+        {showVideo ? (
           <video
             ref={videoRef}
             autoPlay
@@ -167,6 +263,8 @@ export default function Home() {
           >
             <source src="/herobg.mp4" type="video/mp4" />
           </video>
+        ) : (
+          <Skeleton className="absolute inset-0 w-full h-full object-cover z-[1]" />
         )}
         <div className="absolute inset-0 bg-black/60 z-10" />
       </div>
@@ -203,18 +301,20 @@ export default function Home() {
           </div>
 
           {/* Floating elements are deferred until after first paint */}
-          {allowHeavy && (
+          {allowHeavy ? (
             <div className="hidden md:block absolute top-1/4 -left-24">
               <div className="w-48 h-48 rounded-full border border-white/10 flex items-center justify-center">
                 <div className="w-36 h-36 rounded-full border border-white/10" />
               </div>
             </div>
+          ) : (
+            <Skeleton className="hidden md:block absolute top-1/4 -left-24 w-48 h-48 rounded-full" />
           )}
         </div>
 
         {/* Featured Programmes - defer until after first paint */}
         <div className="w-full md:w-1/2 mt-12 md:mt-0">
-          {allowHeavy && (
+          {allowHeavy ? (
             <motion.div
               variants={container}
               initial="hidden"
@@ -296,12 +396,20 @@ export default function Home() {
                 ))}
               </div>
             </motion.div>
+          ) : (
+            <div className="bg-white/30 p-3 md:p-6 rounded-3xl shadow-xl">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {Array.from({ length: 4 }).map((_, i) => (
+                  <SkeletonCard key={i} />
+                ))}
+              </div>
+            </div>
           )}
         </div>
       </div>
 
       {/* International Education Section - render only after paint */}
-      {allowHeavy && (
+      {allowHeavy ? (
         <section
           id="international-section"
           className="relative min-h-[100dvh] flex items-center py-20 md:py-0"
@@ -465,10 +573,40 @@ export default function Home() {
             </motion.div>
           </div>
         </section>
+      ) : (
+        <section className="relative min-h-[100dvh] flex items-center py-20 md:py-0">
+          <div className="absolute inset-0">
+            <Skeleton className="w-full h-full absolute inset-0" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/90 to-purple-950/20" />
+          </div>
+          <div className="relative w-full max-w-7xl mx-auto px-6">
+            <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center mb-12">
+              <div className="space-y-6">
+                <div className="space-y-4 max-w-xl">
+                  <Skeleton className="h-12 w-2/3 rounded mb-2" />
+                  <Skeleton className="h-4 w-full rounded" />
+                  <Skeleton className="h-4 w-3/4 rounded" />
+                </div>
+                <SkeletonStats />
+                <div className="flex items-center gap-6">
+                  <Skeleton className="h-10 w-40 rounded-full" />
+                </div>
+              </div>
+              <SkeletonFeatureBox />
+            </div>
+            <div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                {Array.from({ length: 3 }).map((_, i) => (
+                  <SkeletonHelpCard key={i} />
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
       )}
 
       {/* Sports Academy Section (below the fold, defer render) */}
-      {allowHeavy && (
+      {allowHeavy ? (
         <section className="relative min-h-[100dvh] flex items-center py-20 md:py-0">
           {/* Background */}
           <div className="absolute inset-0">
@@ -647,6 +785,39 @@ export default function Home() {
                 ))}
               </div>
             </motion.div>
+          </div>
+        </section>
+      ) : (
+        <section className="relative min-h-[100dvh] flex items-center py-20 md:py-0">
+          <div className="absolute inset-0">
+            <Skeleton className="w-full h-full absolute inset-0" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/90 to-black/50" />
+          </div>
+          <div className="relative w-full md:max-w-7xl mx-auto px-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+              <div className="space-y-8 w-full">
+                <div className="space-y-6">
+                  <Skeleton className="h-12 w-1/2 rounded mb-2" />
+                  <Skeleton className="h-4 w-3/4 rounded" />
+                  <Skeleton className="h-4 w-1/2 rounded" />
+                </div>
+                <div className="flex flex-wrap gap-4">
+                  <Skeleton className="h-10 w-48 rounded-full" />
+                </div>
+              </div>
+              <SkeletonAcademySlider />
+            </div>
+            <div className="mt-20">
+              <div className="flex items-center gap-4 mb-8">
+                <Skeleton className="h-8 w-32 rounded" />
+                <Skeleton className="h-6 w-16 rounded-full" />
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {Array.from({ length: 2 }).map((_, i) => (
+                  <SkeletonEventCard key={i} />
+                ))}
+              </div>
+            </div>
           </div>
         </section>
       )}
