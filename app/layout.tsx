@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Open_Sans } from "next/font/google";
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 
 
 const openSans = Open_Sans({
     subsets: ["latin"],
     variable: "--font-open-sans",
-    weight: ["300","400", "500", "600", "700", "800"] 
+    weight: ["300","400", "500", "600", "700", "800"]
   });
 
 export const metadata: Metadata = {
