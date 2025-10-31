@@ -22,17 +22,19 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
+    children,
+    }: { children: React.ReactNode }) {
+    return (
+      <html lang="en">
       <body
-        className={`${openSans.variable} antialiased`}
+        className={`${openSans.variable} antialiased `}
       >
-        {children}
+      <div className='bg-[#faf9fb] w-full min-h-[100dvh] overflow-auto'>
+        <main>
+          {children}
+        </main>
+      </div>
       </body>
-    </html>
-  );
-}
+      </html>
+    );
+  }
