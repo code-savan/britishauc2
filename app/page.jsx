@@ -605,6 +605,8 @@ export default function Home() {
         </section>
       )}
 
+
+
       {/* Sports Academy Section (below the fold, defer render) */}
       {allowHeavy ? (
         <section className="relative min-h-[100dvh] flex items-center py-20 md:py-0">
@@ -817,6 +819,167 @@ export default function Home() {
                   <SkeletonEventCard key={i} />
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+
+         {/* Colleges Section (below the fold, defer render) */}
+         {allowHeavy ? (
+        <section className="relative min-h-[100dvh] flex items-center py-20 md:py-0">
+          {/* Background */}
+          <div className="absolute inset-0">
+            <Image
+              src="/hero.png"
+              alt="British AUC University Pathway"
+              fill
+              className="object-cover object-center"
+              loading="eager"
+              priority={false}
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/90 to-black/50" />
+          </div>
+
+          <div className="relative w-full md:max-w-7xl mx-auto px-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+              {/* Left Content */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="space-y-8 w-full"
+              >
+                <div className="space-y-6">
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-50 inline-block">
+                   <span>British AUC</span>  <span className='text-red-500'>University Pathway</span>
+                  </h2>
+                  <p className="text-lg w-full md:text-xl text-gray-200 md:text-gray-300 leading-relaxed">
+                    International pathways to leading universities with A‑Level, International Foundation Year,
+                    Year One/Two, OSSD and Test Prep programmes.
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  {['A‑Level', 'International Foundation Year', 'International Year One', 'International Year Two', 'OSSD', 'Test Preparation'].map((chip) => (
+                    <span key={chip} className="px-3 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm text-white text-sm font-medium">
+                      {chip}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex flex-wrap gap-4">
+                  <Link
+                    href="https://www.britishaucunipathway.com/"
+                    className="inline-flex items-center gap-2 bg-red-600 text-white px-8 py-3 rounded-full font-medium hover:bg-red-700 transition-colors"
+                    prefetch={false}
+                  >
+                    Explore Colleges
+                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
+                      <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </Link>
+                </div>
+              </motion.div>
+
+              {/* Right Content - Feature Box */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative bg-white rounded-3xl p-6 md:p-8 shadow-xl"
+              >
+                <div className="space-y-6">
+                  {/* Stats strip */}
+                  <div className="grid grid-cols-3 gap-3">
+                    {[
+                      { k: '60+ ', v: 'Universities' },
+                      { k: '70–80% ', v: 'Cost Savings' },
+                      { k: '15+ Yrs ', v: 'Experience' }
+                    ].map((s) => (
+                      <div key={s.v} className="rounded-xl border border-gray-200 bg-gray-50/60 px-3 py-3 text-center">
+                        <div className="text-lg font-extrabold text-gray-900 leading-none">{s.k}</div>
+                        <div className="text-[12px] font-semibold text-gray-600">{s.v}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Divider */}
+                  <div className="h-[1px] bg-gray-100" />
+
+                  {/* Why choose list */}
+                  <div className="space-y-3">
+                    <h3 className="text-lg md:text-xl font-bold text-gray-900">Why Choose British AUC University Pathway?</h3>
+                    <ul className="space-y-2">
+                      {[
+                        '70–80% cost savings vs studying abroad for early years',
+                        'Guaranteed progression routes to 60+ UK/US/Canada universities',
+                        'Small class sizes and Oxbridge-style tutorial support',
+                        'Over 15 years of successful university placements',
+                        'Secure campus with modern learning facilities'
+                      ].map((point) => (
+                        <li key={point} className="flex items-start gap-2 text-gray-700 text-sm md:text-base">
+                          <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                          </svg>
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* CTA group */}
+                  <div className="pt-2 flex flex-wrap gap-3">
+                    <Link
+                      href="https://www.britishaucunipathway.com/programmes"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-900 text-white text-sm font-semibold hover:bg-black transition-colors"
+                      prefetch={false}
+                    >
+                      View Programmes
+                      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </Link>
+                    <Link
+                      href="https://www.britishaucunipathway.com/apply"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-gray-900 border border-gray-200 text-sm font-semibold hover:bg-gray-50 transition-colors"
+                      prefetch={false}
+                    >
+                      Apply Now
+                      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+      ) : (
+        <section className="relative min-h-[100dvh] flex items-center py-20 md:py-0">
+          <div className="absolute inset-0">
+            <Skeleton className="w-full h-full absolute inset-0" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/90 to-black/50" />
+          </div>
+          <div className="relative w-full md:max-w-7xl mx-auto px-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+              <div className="space-y-8 w-full">
+                <div className="space-y-6">
+                  <Skeleton className="h-12 w-2/3 rounded mb-2" />
+                  <Skeleton className="h-4 w-3/4 rounded" />
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  {Array.from({ length: 6 }).map((_, i) => (
+                    <Skeleton key={i} className="h-7 w-40 rounded-full" />
+                  ))}
+                </div>
+                <div className="flex flex-wrap gap-4">
+                  <Skeleton className="h-10 w-48 rounded-full" />
+                </div>
+              </div>
+              <SkeletonFeatureBox />
             </div>
           </div>
         </section>
