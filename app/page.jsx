@@ -444,7 +444,7 @@ export default function Home() {
                   <p className="text-lg md:text-[18px] text-white/70 leading-relaxed">
                     Join over 1000 Nigerian students who have successfully gained admission
                     to prestigious universities worldwide through our comprehensive support system.
-                    We offer free visa and admission application services to universities worldwide.
+                    We offer comprehensive admission application services to universities worldwide.
                   </p>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
@@ -504,7 +504,6 @@ export default function Home() {
                     <h3 className="text-lg md:text-xl font-bold text-gray-900">Why Choose British AUC?</h3>
                     <ul className="space-y-2">
                       {[
-                        'Free visa and admission application services',
                         '100% visa success rate',
                         'Over a decade of success stories',
                         'Expert admission specialists',
