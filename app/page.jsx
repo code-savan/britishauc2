@@ -504,6 +504,7 @@ export default function Home() {
                     <h3 className="text-lg md:text-xl font-bold text-gray-900">Why Choose British AUC?</h3>
                     <ul className="space-y-2">
                       {[
+                        'Visa and Admission Services',
                         '100% visa success rate',
                         'Over a decade of success stories',
                         'Expert admission specialists',
