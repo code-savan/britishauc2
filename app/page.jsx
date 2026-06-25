@@ -8,10 +8,6 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import Footer from '@/components/Footer'
 
-const Skeleton = ({ className = "" }) => (
-  <div className={`animate-pulse bg-white/5 rounded ${className}`} />
-);
-
 const programmes = [
   {
     title: "International Education",
@@ -159,8 +155,6 @@ function FlipWords({ words }) {
 }
 
 export default function Home() {
-  const [allowHeavy, setAllowHeavy] = useState(false);
-  const [showVideo, setShowVideo] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
 
   useEffect(() => {
@@ -177,22 +171,11 @@ export default function Home() {
   const videoRef = useRef(null);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setAllowHeavy(true), 200);
-    return () => clearTimeout(timeout);
-  }, []);
-
-  useEffect(() => {
-    const t = setTimeout(() => setShowVideo(true), 350);
-    return () => clearTimeout(t);
-  }, []);
-
-  useEffect(() => {
-    if (!allowHeavy) return;
     const timer = setInterval(() => {
       setCurrentAcademy((prev) => (prev + 1) % academies.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, [allowHeavy]);
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -327,14 +310,10 @@ export default function Home() {
       {/* Hero */}
       <section className="relative min-h-[100dvh] flex items-center">
         <div className="absolute inset-0">
-          <Image src="/poster.png" alt="" fill className="object-cover" priority sizes="100vw" />
-          {showVideo ? (
-            <video ref={videoRef} autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover" preload="metadata" poster="/poster.png">
-              <source src="/herobg.mp4" type="video/mp4" />
-            </video>
-          ) : (
-            <Skeleton className="absolute inset-0 w-full h-full" />
-          )}
+          <Image src="/poster.png" alt="" fill className="object-cover" priority sizes="100vw" fetchPriority="high" />
+          <video ref={videoRef} autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover" preload="auto" poster="/poster.png">
+            <source src="/herobg.mp4" type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-canvas" />
         </div>
         <div className="relative section-container pt-28 md:pt-36 pb-24">
@@ -393,8 +372,7 @@ export default function Home() {
             </p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-            {allowHeavy ? (
-              programmes.map((programme, i) => {
+            {programmes.map((programme, i) => {
                 const Icon = programme.icon;
                 return (
                   <motion.div
@@ -450,23 +428,7 @@ export default function Home() {
                   </motion.div>
                 );
               })
-            ) : (
-              Array.from({ length: 4 }).map((_, i) => (
-                <div key={i} className="glass-panel-premium overflow-hidden">
-                  <Skeleton className="aspect-video w-full" />
-                  <div className="p-6 md:p-8 space-y-4">
-                    <Skeleton className="h-6 w-2/3" />
-                    <Skeleton className="h-4 w-full" />
-                    <Skeleton className="h-4 w-3/4" />
-                    <div className="flex gap-2">
-                      <Skeleton className="h-6 w-16 rounded-full" />
-                      <Skeleton className="h-6 w-20 rounded-full" />
-                    </div>
-                    <Skeleton className="h-4 w-32" />
-                  </div>
-                </div>
-              ))
-            )}
+            }
           </div>
         </div>
       </section>
@@ -510,17 +472,16 @@ export default function Home() {
       </section>
 
       {/* Study Abroad */}
-      {allowHeavy ? (
-        <section className="section-spacing">
-          <div className="section-container">
-            <div className="grid md:grid-cols-2 gap-14 md:gap-24 items-center mb-24">
-              <motion.div
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, margin: "-80px" }}
-                variants={fadeIn}
-              >
-                <span className="section-label mb-4 block">Study Abroad</span>
+      <section className="section-spacing">
+        <div className="section-container">
+          <div className="grid md:grid-cols-2 gap-14 md:gap-24 items-center mb-24">
+            <motion.div
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: "-80px" }}
+              variants={fadeIn}
+            >
+              <span className="section-label mb-4 block">Study Abroad</span>
                 <h2 className="section-title mb-6">
                   Join 1000+ students<br />at world-class<br />universities
                 </h2>
@@ -615,26 +576,9 @@ export default function Home() {
             </motion.div>
           </div>
         </section>
-      ) : (
-        <section className="section-spacing">
-          <div className="section-container">
-            <div className="grid md:grid-cols-2 gap-14 md:gap-24 items-center mb-24">
-              <div>
-                <Skeleton className="h-4 w-24 mb-4" />
-                <Skeleton className="h-12 w-full mb-4" />
-                <Skeleton className="h-12 w-3/4 mb-6" />
-                <Skeleton className="h-20 w-full mb-6" />
-                <Skeleton className="h-10 w-40 rounded-pill" />
-              </div>
-              <Skeleton className="h-80 rounded-2xl" />
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* Sports */}
-      {allowHeavy ? (
-        <section id="sports" className="section-spacing border-t border-hairline scroll-mt-16 relative">
+      <section id="sports" className="section-spacing border-t border-hairline scroll-mt-16 relative">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-red-500/[0.03] blur-[120px]" />
           </div>
@@ -736,15 +680,9 @@ export default function Home() {
             </motion.div>
           </div>
         </section>
-      ) : (
-        <section className="section-spacing border-t border-hairline">
-          <Skeleton className="h-96 rounded-2xl section-container" />
-        </section>
-      )}
 
       {/* University Pathway */}
-      {allowHeavy ? (
-        <section id="pathway" className="section-spacing border-t border-hairline scroll-mt-16 relative">
+      <section id="pathway" className="section-spacing border-t border-hairline scroll-mt-16 relative">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <Image src="/study-centre.jpg" alt="" fill className="object-cover opacity-[0.10]" sizes="100vw" />
             {/* <div className="absolute inset-0 bg-gradient-to-r from-red-500/[0.03] via-white/[0.01] to-blue-500/[0.03]" /> */}
@@ -828,15 +766,9 @@ export default function Home() {
             </div>
           </div>
         </section>
-      ) : (
-        <section className="section-spacing border-t border-hairline">
-          <Skeleton className="h-96 rounded-2xl section-container" />
-        </section>
-      )}
 
       {/* FAQ Section */}
-      {allowHeavy ? (
-        <section id="faq" className="section-spacing border-t border-hairline">
+      <section id="faq" className="section-spacing border-t border-hairline">
           <div className="section-container">
             <motion.div
               initial="hidden"
@@ -896,7 +828,6 @@ export default function Home() {
             </motion.div>
           </div>
         </section>
-      ) : null}
 
       {/* Contact Section */}
       <section id="contact" className="section-spacing border-t border-hairline scroll-mt-16">

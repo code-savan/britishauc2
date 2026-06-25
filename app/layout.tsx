@@ -154,6 +154,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className="dark">
       <body className={`${inter.variable} font-sans antialiased bg-canvas text-ink`}>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preload" as="image" href="/poster.png" fetchPriority="high" />
+        <link rel="preload" as="video" href="/herobg.mp4" type="video/mp4" fetchPriority="high" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
