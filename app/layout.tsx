@@ -18,9 +18,9 @@ export const metadata: Metadata = {
   },
   description: "British AUC is a UK-based education consultancy helping Nigerian students access global education, sports development, and university pathway programmes. Study abroad with expert visa and admissions support.",
   icons: {
-    icon: "/logoicon.png",
-    shortcut: "/logoicon.png",
-    apple: "/logoicon.png",
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
   },
   manifest: "/site.webmanifest",
   keywords: [
@@ -96,7 +96,7 @@ const jsonLd = {
       "@id": `${siteUrl}/#organization`,
       name: "British AUC",
       url: siteUrl,
-      logo: `${siteUrl}/logoicon.png`,
+      logo: `${siteUrl}/logo.png`,
       description: "UK-based education consultancy helping Nigerian students access global education, sports development, and university pathway programmes.",
       address: [
         {
@@ -116,14 +116,14 @@ const jsonLd = {
       contactPoint: [
         {
           "@type": "ContactPoint",
-          telephone: "+44-7375-654996",
+          telephone: "+44-7840-782759",
           contactType: "sales",
           areaServed: "GB",
           availableLanguage: ["English"],
         },
         {
           "@type": "ContactPoint",
-          telephone: "+234-813-584-0721",
+          telephone: "+234-805-900-0097",
           contactType: "sales",
           areaServed: "NG",
           availableLanguage: ["English"],

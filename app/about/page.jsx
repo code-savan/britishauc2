@@ -52,8 +52,7 @@ export default function AboutPage() {
       }`}>
         <div className="section-container flex items-center justify-between h-16 md:h-20">
           <Link href="/" className="flex items-center gap-2.5">
-            <Image src="/logoicon.png" alt="British AUC" width={28} height={28} className="rounded" />
-            <span className={`font-display font-medium tracking-tight transition-colors ${scrolled ? 'text-ink' : 'text-white'}`}>British AUC</span>
+            <Image src="/logo.png" alt="British AUC" width={28} height={28} className="rounded" />
           </Link>
           <Link href="/" className={`text-sm transition-colors ${scrolled ? 'text-ink-muted hover:text-ink' : 'text-white/70 hover:text-white'}`}>
             Back to Home
@@ -383,8 +382,8 @@ export default function AboutPage() {
               Our team is standing by — call us or get in touch online.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a href="tel:+2348135840721" className="pill-button-primary text-base">
-                Call +234 813 584 0721
+              <a href="tel:+2348059000097" className="pill-button-primary text-base">
+                Call +234 805 900 0097
                 <Phone className="w-4 h-4" />
               </a>
               <Link href="/" className="pill-button-secondary text-base">Explore Programmes</Link>

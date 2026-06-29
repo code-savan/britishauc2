@@ -197,18 +197,14 @@ export default function Home() {
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-canvas/85 backdrop-blur-xl shadow-lg shadow-black/10' : 'bg-transparent'
         }`}>
         <div className="relative section-container flex items-center justify-between h-16 md:h-20">
-          <Link href="/" className="flex items-center gap-2.5">
+          <Link href="/" className="flex items-center">
             <Image
-              src="/logoicon.png"
+              src="/logo.png"
               alt="British AUC"
               width={32}
               height={32}
               className="rounded-lg"
             />
-            <span className={`font-display text-lg font-medium tracking-tight transition-colors duration-300 ${scrolled ? 'text-ink' : 'text-white'
-              }`}>
-              British AUC
-            </span>
           </Link>
           <div className="hidden lg:flex items-center gap-10">
             <Link href="/about" className={`nav-link ${scrolled ? 'text-ink-muted hover:text-ink' : 'text-white/70 hover:text-white'}`}>
@@ -275,8 +271,7 @@ export default function Home() {
               >
                 <div className="flex items-center justify-between px-5 h-16 border-b border-hairline shrink-0">
                   <Link href="/" className="flex items-center gap-2.5" onClick={() => setMobileMenu(false)}>
-                    <Image src="/logoicon.png" alt="British AUC" width={28} height={28} className="rounded" />
-                    <span className="font-display text-base font-medium tracking-tight text-ink">British AUC</span>
+                    <Image src="/logo.png" alt="British AUC" width={28} height={28} className="rounded" />
                   </Link>
                   <button onClick={() => setMobileMenu(false)} className="p-2 text-ink-muted hover:text-ink transition-colors">
                     <X className="w-5 h-5" />
@@ -296,9 +291,9 @@ export default function Home() {
                   <button onClick={() => { scrollTo('contact'); setMobileMenu(false); }} className="w-full pill-button-secondary text-sm justify-center">
                     Contact
                   </button>
-                  <a href="tel:+2348135840721" className="flex items-center justify-center gap-2 pt-2 text-xs text-ink-muted">
+                  <a href="tel:+2348059000097" className="flex items-center justify-center gap-2 pt-2 text-xs text-ink-muted">
                     <Phone className="w-3.5 h-3.5" />
-                    +234 813 584 0721
+                    +234 805 900 0097
                   </a>
                 </div>
               </motion.aside>
@@ -923,8 +918,8 @@ export default function Home() {
                 Select Programme
                 <ArrowUpRight className="w-4 h-4" />
               </button>
-              <a href="tel:+2348135840721" className="pill-button-secondary text-base">
-                Call +234 813 584 0721
+              <a href="tel:+2348059000097" className="pill-button-secondary text-base">
+                Call +234 805 900 0097
               </a>
             </div>
           </motion.div>

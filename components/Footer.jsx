@@ -10,21 +10,20 @@ export default function Footer() {
       <div className="section-container">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 mb-12">
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="flex items-center gap-2.5 mb-4">
-              <Image src="/logoicon.png" alt="British AUC" width={28} height={28} className="rounded" />
-              <span className="font-display font-medium tracking-tight">British AUC</span>
+            <Link href="/" className="flex items-center mb-4">
+              <Image src="/logo.png" alt="British AUC" width={28} height={28} className="rounded" />
             </Link>
             <p className="text-sm text-ink-muted leading-relaxed max-w-xs mb-6">
               Pathways to global success through education, sports, and cultural exchange.
             </p>
             <div className="space-y-2.5">
-              <a href="tel:+447375654996" className="flex items-center gap-2.5 text-sm text-ink-muted hover:text-ink transition-colors">
+              <a href="tel:+447840782759" className="flex items-center gap-2.5 text-sm text-ink-muted hover:text-ink transition-colors">
                 <Phone className="w-3.5 h-3.5" />
-                +44 7375 654996
+                +44 7840 782759
               </a>
-              <a href="tel:+2348135840721" className="flex items-center gap-2.5 text-sm text-ink-muted hover:text-ink transition-colors">
+              <a href="tel:+2348059000097" className="flex items-center gap-2.5 text-sm text-ink-muted hover:text-ink transition-colors">
                 <Phone className="w-3.5 h-3.5" />
-                +234 813 584 0721
+                +234 805 900 0097
               </a>
               <a href="mailto:admin@britishauc.com" className="flex items-center gap-2.5 text-sm text-ink-muted hover:text-ink transition-colors">
                 <Mail className="w-3.5 h-3.5" />
