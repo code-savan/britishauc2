@@ -1,11 +1,22 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'export',
     images: {
         dangerouslyAllowSVG: true,
         unoptimized: true
     },
-    trailingSlash: true
+    trailingSlash: false,
+    async rewrites() {
+        return [
+            {
+                source: '/',
+                destination: '/index.html',
+            },
+            {
+                source: '/:path((?!_next|index.html).*)',
+                destination: '/index.html',
+            },
+        ]
+    },
 };
 
 export default nextConfig;

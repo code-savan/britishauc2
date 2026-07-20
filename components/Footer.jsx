@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 mb-12">
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center mb-4">
-              <Image src="/logo.png" alt="British AUC" width={28} height={28} className="rounded" />
+              <Image src="/logoicon.png" alt="British AUC" width={28} height={28} className="rounded" />
             </Link>
             <p className="text-sm text-ink-muted leading-relaxed max-w-xs mb-6">
               Pathways to global success through education, sports, and cultural exchange.

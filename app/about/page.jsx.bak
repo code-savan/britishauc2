@@ -48,11 +48,11 @@ export default function AboutPage() {
     <div className="min-h-screen w-full bg-canvas">
       {/* Nav */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-canvas/85 backdrop-blur-xl border-b border-hairline' : 'bg-transparent'
+        scrolled ? 'bg-white/85 backdrop-blur-xl border-b border-hairline' : 'bg-transparent'
       }`}>
         <div className="section-container flex items-center justify-between h-16 md:h-20">
           <Link href="/" className="flex items-center gap-2.5">
-            <Image src="/logo.png" alt="British AUC" width={28} height={28} className="rounded" />
+            <Image src="/logoicon.png" alt="British AUC" width={28} height={28} className="rounded" />
           </Link>
           <Link href="/" className={`text-sm transition-colors ${scrolled ? 'text-ink-muted hover:text-ink' : 'text-white/70 hover:text-white'}`}>
             Back to Home

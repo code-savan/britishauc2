@@ -194,12 +194,12 @@ export default function Home() {
   return (
     <main className="relative w-full overflow-x-hidden bg-canvas">
       {/* Navigation */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-canvas/85 backdrop-blur-xl shadow-lg shadow-black/10' : 'bg-transparent'
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/85 backdrop-blur-xl shadow-lg shadow-black/10' : 'bg-transparent'
         }`}>
         <div className="relative section-container flex items-center justify-between h-16 md:h-20">
           <Link href="/" className="flex items-center">
             <Image
-              src="/logo.png"
+              src="/logoicon.png"
               alt="British AUC"
               width={32}
               height={32}
@@ -271,7 +271,7 @@ export default function Home() {
               >
                 <div className="flex items-center justify-between px-5 h-16 border-b border-hairline shrink-0">
                   <Link href="/" className="flex items-center gap-2.5" onClick={() => setMobileMenu(false)}>
-                    <Image src="/logo.png" alt="British AUC" width={28} height={28} className="rounded" />
+                    <Image src="/logoicon.png" alt="British AUC" width={28} height={28} className="rounded" />
                   </Link>
                   <button onClick={() => setMobileMenu(false)} className="p-2 text-ink-muted hover:text-ink transition-colors">
                     <X className="w-5 h-5" />
